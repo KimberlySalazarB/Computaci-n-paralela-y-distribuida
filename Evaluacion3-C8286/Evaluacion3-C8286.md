@@ -82,7 +82,9 @@ Modifique el modo de la secuencia de comandos a un ejecutable mediante el comand
 
 Puede cambiar el nombre del archivo para quitar la extensión de modo que los usuarios no tengan que agregar .sh al comando para ejecutar la secuencia de comandos.
 
-/home/alumno/app-web$ **mv user-input.sh user-input** Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
+/home/alumno/app-web$ **mv user-input.sh user-input**
+
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -178,7 +180,9 @@ from flask import request
 
 Cree una instancia de la clase Flask y nombrela sample**.** Asegúrese de usar dos guiones bajos antes y después del "nombre".
 
-sample = Flask(\_\_name\_\_) Computación Paralela y Distribuida ![ref1]
+sample = Flask(\_\_name\_\_)
+
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -233,13 +237,13 @@ Puede verificar que el servidor se está ejecutando de dos maneras.
 
    /home/alumno/app-web $ **curl ~~http://0.0.0.0:8080~~** Me estás llamando desde 127.0.0.1 /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.003.jpeg)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.003.jpeg)
 
 **Detener el servidor.**
 
 Volver a la ventana de terminal donde se está ejecutando el servidor y presione CTRL+C para detener el servidor.
 
-Computación Paralela y Distribuida ![ref1]
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -297,7 +301,7 @@ if \_\_name\_\_ == "\_\_main\_\_":
 
 sample.run (host="0.0.0.0", port=8080)
 
-Computación Paralela y Distribuida ![ref1]
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -326,7 +330,7 @@ De nuevo, puede verificar que su programa se está ejecutando de dos maneras.
 
    **Me estás llamando desde 127.0.0.1**
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.004.jpeg)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.004.jpeg)
 
 2) Abrir otra ventana de terminal y utilice el comando **curl** para verificar la respuesta del servidor. Aquí es donde verá el resultado del código HTML renderizado automáticamente usando la función render\_template. En este caso, obtendrá todo el contenido HTML. Sin embargo, el código dinámico de Python se reemplazará por el valor de **{{request.remote\_addr}}**. Además, observe que su mensaje estará en la misma línea que la última línea de salida HMTL. Presionar ENTER para obtener una nueva línea.
 
@@ -344,7 +348,7 @@ De nuevo, puede verificar que su programa se está ejecutando de dos maneras.
 
 </html>/home/alumno/app-web$ /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.005.jpeg)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.005.jpeg)
 
 **Detener el servidor.**
 
@@ -356,7 +360,7 @@ Una aplicación se puede implementar en un servidor bare metal (servidor físico
 
 1. Crear directorios temporales para almacenar los archivos del sitio web.
 
-Computación Paralela y Distribuida ![ref1]
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -431,7 +435,7 @@ docker run -t -d -p 8080:8080 --name samplerunning sampleapp Las opciones de **d
 
 docker ps -a **Guardar el script bash.**
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.006.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.006.png)
 
 **Crear, ejecutar y verificar el contenedor Docker**
 
@@ -445,7 +449,7 @@ Ejecutar el script bash desde la línea de comandos. Debería verse un resultado
 
 /home/alumno/app-web$ **bash.** /sample-app.sh Sending build context to docker daemon 6.144kB Step 1/7: FROM python
 
-Computación Paralela y Distribuida ![ref1]
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -523,7 +527,7 @@ Succesfully built a2588e9b0593
 
 Succesfully tagged sampleapp:latest 8953a95374ff8ebc203059897774465312acc8f0ed6abd98c4c2b04448a56ba5 CONTAINER ID IMAGE CREATED STATUS PORTS NAMES
 
-Computación Paralela y Distribuida ![ref1]
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -531,7 +535,7 @@ Computación Paralela y Distribuida ![ref1]
 
 /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.007.jpeg)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.007.jpeg)
 
 **Investiga el contenedor Docker en ejecución y la aplicación web.**
 
@@ -543,7 +547,7 @@ Plantillas estáticas de Dockerfile sample\_app.py
 
 /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.008.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.008.png)
 
 Observe el archivo Dockerfile creado por su script bash. Abra este archivo para ver cómo se ve en su forma final sin los comandos **echo**.
 
@@ -561,17 +565,17 @@ Observe el archivo Dockerfile creado por su script bash. Abra este archivo para 
 
    CMD python3 /home/myapp/sample\_app.py
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.009.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.009.png)
 
 3) La salida del comando **docker ps -a** puede ser difícil de leer dependiendo del ancho de la pantalla de su terminal. Puede redirigirlo a un archivo de texto donde puede verlo mejor sin ajustar palabras.
 
 /home/alumno/app-web$ **docker ps -a >> running.txt** /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.010.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.010.png)
 
 2) El contenedor Docker crea su propia dirección IP a partir de un espacio de direcciones de red privada. Verificar que la aplicación web se esté ejecutando e informe de la dirección IP. En un navegador web en **http://localhost:8080**, se debería ver el mensaje **Me estás llamando desde 172.17.0.1** con formato H1 sobre un fondo azul metálico claro. También puede usar el comando **curl**, si lo desea.
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.011.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.011.png)
 
 /home/alumno/app-web$ **curl http://172.17.0.1:8080** <html>
 
@@ -591,11 +595,13 @@ Observe el archivo Dockerfile creado por su script bash. Abra este archivo para 
 
 /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.012.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.012.png)
 
 3) De forma predeterminada, Docker utiliza la subred IPv4 172.17.0.0/16 para redes de contenedores. (Esta dirección se puede cambiar si es necesario.) Introduzca el comando **ip address** para mostrar todas las direcciones IP utilizadas . Debería ver la dirección de bucle invertido (loopback) 127.0.0.1 que usó la aplicación web anteriormente en la evaluación y la nueva interfaz Docker con la dirección IP 172.17.0.1.
 
-/home/alumno/app-web$ **ip address** Computación Paralela y Distribuida ![ref1]
+/home/alumno/app-web$ **ip address** 
+
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -619,7 +625,7 @@ valid\_lft forever preferred\_lft forever
 
 <output omitted>
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.013.jpeg)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.013.jpeg)
 
 **Acceder y explorar el contenedor en ejecución.**
 
@@ -635,7 +641,7 @@ Recuerde que un contenedor Docker es una forma de encapsular todo lo que necesit
 
    bin dev home lib64 mnt proc run srv tmp var boot etc lib media opt root sbin sys usr root@8953a95374ff:/#
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.014.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.014.png)
 
 3) Recordar que en su script bash, agregó comandos en Dockerfile que copiaron los directorios y archivos de la aplicación al directorio **home/myapp**. Introduzca el comando **ls** de nuevo en ese directorio para ver el script y los directorios **sample\_app.py** . Para obtener una mejor comprensión de lo que está incluido en su contenedor Docker, puede usar el comando **ls** para examinar otros directorios como /etc y /bin.
 
@@ -649,13 +655,13 @@ sample\_app.py plantillas estáticas (static templates) root@8953a95374ff:/#
 
 /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.015.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.015.png)
 
 **Detener y retirar el contenedor Docker.**
 
 1) Puede detener el contenedor Docker con el comando d**ocker stop** especificando el nombre del contenedor en ejecución. Tomará unos segundos limpiar y almacenar en caché el contenedor. Puede ver que aún existe ingresando el comando **docker ps -a**. Sin embargo, si
 
-Computación Paralela y Distribuida ![ref1]
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -663,7 +669,7 @@ actualiza la página web para **http://localhost:8080**, verá que la aplicació
 
 /home/alumno/app-web$ **docker stop samplerunning** samplerunning
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.016.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.016.png)
 
 /home/alumno/app-web$ **docker ps -a**
 
@@ -673,7 +679,7 @@ df034cb53e72 sampleapp "/bin/sh -c 'python..." 49 minutes ago Exited (137) 20 se
 
 /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.017.jpeg)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.017.jpeg)
 
 2) Se puede reiniciar un contenedor detenido con el comando d**ocker start**. El contenedor se reiniciará inmediatamente.
 
@@ -681,7 +687,7 @@ df034cb53e72 sampleapp "/bin/sh -c 'python..." 49 minutes ago Exited (137) 20 se
 
 /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.018.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.018.png)
 
 3) Para eliminar permanentemente el contenedor, primero se debe detener y luego remover con
 
@@ -689,17 +695,17 @@ df034cb53e72 sampleapp "/bin/sh -c 'python..." 49 minutes ago Exited (137) 20 se
 
 /home/alumno/app-web$ **docker stop samplerunning** samplerunning
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.019.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.019.png)
 
 /home/alumno/app-web$ **docker rm samplerunning** samplerunning
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.020.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.020.png)
 
 /home/alumno/app-web$ **docker ps -a**
 
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.021.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.021.png)
 
 **Entregable:**
 
@@ -707,4 +713,4 @@ Presenta el código completo desarrollado en tu repositorio personal hasta el di
 
 Computación Paralela y Distribuida
 
-[ref1]: Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png
+[ref1]: (imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
