@@ -2,7 +2,7 @@
  
  **C8286-Computación Paralela y Distribuida** 
 
-**Evaluación: Construyendo una simple app con contenedor de Docker**
+                                           **Evaluación: Construyendo una simple app con contenedor de Docker**
 
 .
 
