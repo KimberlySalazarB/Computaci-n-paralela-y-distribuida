@@ -1,4 +1,4 @@
-﻿**Departamento Académico de Ingeniería ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)**
+﻿**Departamento Académico de Ingeniería              ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)**
  
  **C8286-Computación Paralela y Distribuida** 
 
