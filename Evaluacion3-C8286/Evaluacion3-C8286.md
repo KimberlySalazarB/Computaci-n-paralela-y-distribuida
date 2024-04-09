@@ -34,9 +34,8 @@ Cambie su directorio de trabajo a **~/home/alumno/app-web** y agregue un nuevo a
 
 Utilice el comando **nano** para abrir el editor de texto nano. /home/alumno/app-web$ **nano user-input.sh**
 
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
+
 
 **Añada la 'she-bang' a la parte superior del script.**
 
@@ -84,9 +83,8 @@ Puede cambiar el nombre del archivo para quitar la extensión de modo que los us
 
 /home/alumno/app-web$ **mv user-input.sh user-input**
 
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
+
 
 **Ejecutar el script desde la línea de comandos.**
 
@@ -132,9 +130,8 @@ done
 
 O
 
-Computación Paralela y Distribuida ![ref1]
 
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
+
 
 #!/bin/bash
 
@@ -182,9 +179,8 @@ Cree una instancia de la clase Flask y nombrela sample**.** Asegúrese de usar d
 
 sample = Flask(\_\_name\_\_)
 
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
+ 
 
 **Definir un método para mostrar la dirección IP del cliente.**
 
@@ -242,10 +238,7 @@ Puede verificar que el servidor se está ejecutando de dos maneras.
 **Detener el servidor.**
 
 Volver a la ventana de terminal donde se está ejecutando el servidor y presione CTRL+C para detener el servidor.
-
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
-
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
+ 
 
 **Configurar la aplicación web para utilizar archivos de sitio web**
 
@@ -301,9 +294,8 @@ if \_\_name\_\_ == "\_\_main\_\_":
 
 sample.run (host="0.0.0.0", port=8080)
 
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
+
 
 **Guardar y ejecutar el script.**
 
@@ -328,7 +320,7 @@ De nuevo, puede verificar que su programa se está ejecutando de dos maneras.
 
 1) Abrir el navegador web Chromium e introduzca 0.0.0.0:8080 en el campo URL. Debería obtener la misma salida que antes. Sin embargo, su fondo será azul metálico claro y el texto tendrá el formato H1.
 
-   **Me estás llamando desde 127.0.0.1**
+   *Me estás llamando desde 127.0.0.1*
 
 ![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.004.jpeg)
 
@@ -359,10 +351,6 @@ Volver a la ventana de terminal donde se está ejecutando el servidor y presione
 Una aplicación se puede implementar en un servidor bare metal (servidor físico dedicado a un entorno de inquilino único) o en una máquina virtual. También se puede implementar en una solución contenerizada como Docker. En esta parte, creará un script bash y le agregará comandos que completen las siguientes tareas para crear y ejecutar un contenedor Docker:
 
 1. Crear directorios temporales para almacenar los archivos del sitio web.
-
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
-
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
 2. Copiar los directorios del sitio web y sample\_app.py en el directorio temporal.
 2. Crear un archivo docker (Dockerfile).
@@ -409,9 +397,7 @@ echo "COPY./static /home/miapp/static/ ">> tempDir/DockerFile echo "COPY./templa
 
 5) Finalmente, agregue el comando Docker **CMD** para ejecutar el script de Python. echo "CMD python3 /home/myapp/sample\_app.py" >> tempdir/DockerFile
 
-Computación Paralela y Distribuida ![ref1]
 
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
 **Construir el contenedor Docker.**
 
@@ -449,9 +435,6 @@ Ejecutar el script bash desde la línea de comandos. Debería verse un resultado
 
 /home/alumno/app-web$ **bash.** /sample-app.sh Sending build context to docker daemon 6.144kB Step 1/7: FROM python
 
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
-
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
 latest: Pulling from library/python 90fe46dd8199: Pulling fs layer 35a4f1977689: Pulling fs layer bbc37f14aded: Pull complete 74e27dc593d4: Pull complete 4352dcff7819: Pull complete deb569b08de6: Pull complete 98fd06fa8c53: Pull complete
 
@@ -527,9 +510,6 @@ Succesfully built a2588e9b0593
 
 Succesfully tagged sampleapp:latest 8953a95374ff8ebc203059897774465312acc8f0ed6abd98c4c2b04448a56ba5 CONTAINER ID IMAGE CREATED STATUS PORTS NAMES
 
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
-
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
 8953a95374ff sampleapp «/bin/sh -c 'python... "1 secong ago up less than a second 0.0.0. 0:8080 ->8080/tcp samplerunning
 
@@ -601,10 +581,6 @@ Observe el archivo Dockerfile creado por su script bash. Abra este archivo para 
 
 /home/alumno/app-web$ **ip address** 
 
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
-
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
-
 1: lo: <LOOPBACK,UP,LOWER\_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
 
 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo
@@ -661,10 +637,6 @@ sample\_app.py plantillas estáticas (static templates) root@8953a95374ff:/#
 
 1) Puede detener el contenedor Docker con el comando d**ocker stop** especificando el nombre del contenedor en ejecución. Tomará unos segundos limpiar y almacenar en caché el contenedor. Puede ver que aún existe ingresando el comando **docker ps -a**. Sin embargo, si
 
-Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
-
-**Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
-
 actualiza la página web para **http://localhost:8080**, verá que la aplicación web ya no se está ejecutando.
 
 /home/alumno/app-web$ **docker stop samplerunning** samplerunning
@@ -711,6 +683,3 @@ CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES /home/alumno/app-web$
 
 Presenta el código completo desarrollado en tu repositorio personal hasta el dia 11 de abril (8:00 PM). Recuerda presentar tus resultados en formato markdown y código si es que se ha realizado.
 
-Computación Paralela y Distribuida
-
-[ref1]: (imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
