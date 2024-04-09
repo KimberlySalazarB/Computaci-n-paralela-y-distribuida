@@ -82,7 +82,7 @@ Modifique el modo de la secuencia de comandos a un ejecutable mediante el comand
 
 Puede cambiar el nombre del archivo para quitar la extensión de modo que los usuarios no tengan que agregar .sh al comando para ejecutar la secuencia de comandos.
 
-/home/alumno/app-web$ **mv user-input.sh user-input** Computación Paralela y Distribuida ![ref1]
+/home/alumno/app-web$ **mv user-input.sh user-input** Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
@@ -94,7 +94,7 @@ Ahora el script se puede ejecutar desde la línea de comandos sin el comando **s
 
 Tu nombre es Kapumota. /home/alumno/app-web$
 
-![](Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.002.png)
+![](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.002.png)
 
 **Investigar otros scripts bash.**
 
