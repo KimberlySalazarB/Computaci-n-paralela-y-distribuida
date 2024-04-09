@@ -2,7 +2,7 @@
  
  **C8286-Computación Paralela y Distribuida** 
 
-                                           **Evaluación: Construyendo una simple app con contenedor de Docker**
+**Evaluación: Construyendo una simple app con contenedor de Docker**
 
 .
 
@@ -34,7 +34,7 @@ Cambie su directorio de trabajo a **~/home/alumno/app-web** y agregue un nuevo a
 
 Utilice el comando **nano** para abrir el editor de texto nano. /home/alumno/app-web$ **nano user-input.sh**
 
-Computación Paralela y Distribuida ![ref1]
+Computación Paralela y Distribuida ![ref1](imagenes/Aspose.Words.0ce703c8-82af-420a-835d-c24734ada1f4.001.png)
 
 **Departamento Académico de Ingeniería C8286-Computación Paralela y Distribuida** 
 
