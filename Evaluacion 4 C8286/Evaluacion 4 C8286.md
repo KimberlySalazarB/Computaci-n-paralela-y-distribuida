@@ -43,7 +43,9 @@ Para confirmar que el stack y sus recursos se eliminaron. Buscamos CloudFormatio
 
 ![](imagenes/Aspose.Words.a0406ccf-5cf1-4b83-9fa7-28f4dbdce17c.008.jpeg)
 
-![](imagenes/Aspose.Words.a0406ccf-5cf1-4b83-9fa7-28f4dbdce17c.009.jpeg)Asimismo, se puede utilizar el siguiente comando para verificar que el stack se eliminó. El resultado proporciona información de varios stacks, pero la pila que se creó al inicio está con **StackStatus** de **DELETE\_COMPLETE.**
+![](imagenes/Aspose.Words.a0406ccf-5cf1-4b83-9fa7-28f4dbdce17c.009.jpeg)
+
+Asimismo, se puede utilizar el siguiente comando para verificar que el stack se eliminó. El resultado proporciona información de varios stacks, pero la pila que se creó al inicio está con **StackStatus** de **DELETE\_COMPLETE.**
 
 ![](imagenes/Aspose.Words.a0406ccf-5cf1-4b83-9fa7-28f4dbdce17c.010.jpeg)
 
