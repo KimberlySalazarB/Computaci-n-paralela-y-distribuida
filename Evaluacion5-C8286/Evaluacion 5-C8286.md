@@ -1,4 +1,4 @@
-#﻿# **EJERCICIO 1:** Sistema de procesamiento de imágenes en tiempo real 
+## **EJERCICIO 1:** Sistema de procesamiento de imágenes en tiempo real 
 ```
 import os
 from PIL import Image, ImageFilter
