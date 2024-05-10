@@ -87,7 +87,7 @@ Dataset Cats de 202 imagenes= <https://www.kaggle.com/datasets/pavansanagapati/i
 
 ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.004.png) ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.005.png)
 
-## **EJERCICIO 2:**Simulación de sistema de reservas con alta concurrencia
+## **EJERCICIO 2:** Simulación de sistema de reservas con alta concurrencia
 ```
 def add_reservation(reservations, reservation):
     """Agrega una nueva reserva a la lista de reservas de manera inmutable."""
