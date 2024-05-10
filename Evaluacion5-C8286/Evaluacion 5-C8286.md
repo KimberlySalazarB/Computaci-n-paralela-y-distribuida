@@ -277,107 +277,79 @@ if __name__ == "__main__":
     asyncio.run(analyze_genomic_data('path_to_genomic_data.txt'))
 ```
 **Resultados de 12 datos genómicos:**
-
+```
 {'sample\_id': 'sample1', 'allele\_frequencies': {'A': 0.25, 'T': 0.25, 'G': 0.25, 'C': 0.25}} {'sample\_id': 'sample2', 'allele\_frequencies': {'T': 0.5, 'A': 0.25, 'C': 0.25}} {'sample\_id': 'sample3', 'allele\_frequencies': {'A': 0.25, 'T': 0.25, 'C': 0.25, 'G': 0.25}} {'sample\_id': 'sample4', 'allele\_frequencies': {'G': 0.5, 'T': 0.25, 'C': 0.25}} {'sample\_id': 'sample5', 'allele\_frequencies': {'A': 0.25, 'C': 0.25, 'G': 0.25, 'T': 0.25}} {'sample\_id': 'sample6', 'allele\_frequencies': {'G': 0.25, 'A': 0.25, 'T': 0.25, 'C': 0.25}} {'sample\_id': 'sample7', 'allele\_frequencies': {'T': 0.5, 'C': 0.5}}
 
 {'sample\_id': 'sample8', 'allele\_frequencies': {'C': 0.25, 'A': 0.25, 'T': 0.25, 'G': 0.25}} {'sample\_id': 'sample9', 'allele\_frequencies': {'G': 0.25, 'T': 0.25, 'A': 0.25, 'C': 0.25}} {'sample\_id': 'sample10', 'allele\_frequencies': {'T': 0.5, 'C': 0.25, 'A': 0.25}} {'sample\_id': 'sample11', 'allele\_frequencies': {'A': 0.25, 'C': 0.25, 'T': 0.25, 'G': 0.25}} {'sample\_id': 'sample12', 'allele\_frequencies': {'G': 0.25, 'A': 0.25, 'C': 0.25, 'T': 0.25}}
+```
+## ** Ejercicio 6:** Simulador de mercados financieros en tiempo real
+```
+def calculate_moving_average(prices, window_size=14):
+    """Calcula la media móvil simple de los precios."""
+    if len(prices) < window_size:
+        return None  # No hay suficientes datos para calcular la media móvil
+    return sum(prices[-window_size:]) / window_size
 
-Ejercicio 6: Simulador de mercados financieros en tiempo real
+def calculate_rsi(prices, periods=8):
+    """Calcula el índice de fuerza relativa (RSI) para una lista de precios."""
+    if len(prices) < periods:
+        return None  # No hay suficientes datos para calcular el RSI
+    gains = [max(0, prices[i] - prices[i - 1]) for i in range(1, len(prices))]
+    losses = [max(0, prices[i - 1] - prices[i]) for i in range(1, len(prices))]
+    average_gain = sum(gains[-periods:]) / periods
+    average_loss = sum(losses[-periods:]) / periods
 
-def calculate\_moving\_average(prices, window\_size=14):![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.015.png)
-
-"""Calcula la media móvil simple de los precios."""
-
-if len(prices) < window\_size:
-
-return None # No hay suficientes datos para calcular la media móvil
-
-return sum(prices[-window\_size:]) / window\_size
-
-def calculate\_rsi(prices, periods=8):
-
-"""Calcula el índice de fuerza relativa (RSI) para una lista de precios."""
-
-if len(prices) < periods:
-
-return None # No hay suficientes datos para calcular el RSI
-
-gains = [max(0, prices[i] - prices[i - 1]) for i in range(1, len(prices))]
-
-losses = [max(0, prices[i - 1] - prices[i]) for i in range(1, len(prices))]
-
-average\_gain = sum(gains[-periods:]) / periods average\_loss = sum(losses[-periods:]) / periods
-
-if average\_loss == 0:
-
-return 100 # Evitar división por cero rs = average\_gain / average\_loss
-
-rsi = 100 - (100 / (1 + rs))
-
-return rsi
+    if average_loss == 0:
+        return 100  # Evitar división por cero
+    rs = average_gain / average_loss
+    rsi = 100 - (100 / (1 + rs))
+    return rsi
 
 from concurrent.futures import ThreadPoolExecutor
 
-def parallel\_analyze\_data(stock\_data):
+def parallel_analyze_data(stock_data):
+    """Analiza datos bursátiles en paralelo."""
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        results = list(executor.map(analyze_stock, stock_data))
+    return results
 
-"""Analiza datos bursátiles en paralelo."""
-
-with ThreadPoolExecutor(max\_workers=10) as executor:
-
-results = list(executor.map(analyze\_stock, stock\_data)) return results
-
-def analyze\_stock(data):
-
-"""Analiza los datos de un solo stock."""
-
-moving\_average = calculate\_moving\_average(data['prices'])
-
-rsi = calculate\_rsi(data['prices'])
-
-return {'stock': data['stock'], 'moving\_average': moving\_average, 'RSI': rsi}
+def analyze_stock(data):
+    """Analiza los datos de un solo stock."""
+    moving_average = calculate_moving_average(data['prices'])
+    rsi = calculate_rsi(data['prices'])
+    return {'stock': data['stock'], 'moving_average': moving_average, 'RSI': rsi}
 
 import asyncio
 
-async def stream\_stock\_data():![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.016.png)
+async def stream_stock_data():
+    """Simula la recepción de datos bursátiles en tiempo real."""
+    example_data = [
+        {'stock': 'AAPL', 'prices': [150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164]},
+        {'stock': 'GOOGL', 'prices': [120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134]},
+        {'stock': 'MSFT', 'prices': [250, 251, 249, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263]},
+        {'stock': 'AMZN', 'prices': [330, 332, 334, 336, 338, 340, 342, 344, 346, 348, 350, 352, 354, 356, 358]},
+        {'stock': 'TSLA', 'prices': [600, 605, 610, 615, 620, 625, 630, 635, 640, 645, 650, 655, 660, 665, 670]},
+        {'stock': 'NFLX', 'prices': [550, 552, 554, 556, 558, 560, 562, 564, 566, 568, 570, 572, 574, 576, 578]},
+        {'stock': 'FB', 'prices': [320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334]},
+        {'stock': 'NVDA', 'prices': [700, 702, 704, 706, 708, 710, 712, 714, 716, 718, 720, 722, 724, 726, 728]},
+        {'stock': 'V', 'prices': [220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234]},
+        {'stock': 'JPM', 'prices': [150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164]}
+    ]
+    while True:
+        await asyncio.sleep(1)  # Simular la recepción de datos cada segundo
+        processed_data = await asyncio.get_event_loop().run_in_executor(None, parallel_analyze_data, example_data)
+        print("Processed Data:", processed_data)
 
-"""Simula la recepción de datos bursátiles en tiempo real.""" example\_data = [
 
-{'stock': 'AAPL', 'prices': [150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164]},
+if __name__ == "__main__":
+    asyncio.run(stream_stock_data())
 
-{'stock': 'GOOGL', 'prices': [120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134]},
+```
+#### **Resultado con 10 datos bursátiles:**
+```
+Processed Data: [{'stock': 'AAPL', 'moving\_average': 157.5, 'RSI': 100}, {'stock': 'GOOGL', 'moving\_average': 127.5, 'RSI': 100}, {'stock': 'MSFT', 'moving\_average': 256.42857142857144, 'RSI': 100}, {'stock': 'AMZN', 'moving\_average': 345.0, 'RSI': 100}, {'stock': 'TSLA', 'moving\_average': 637.5, 'RSI': 100}, {'stock': 'NFLX', 'moving\_average':
 
-{'stock': 'MSFT', 'prices': [250, 251, 249, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263]},
+ 565.0, 'RSI': 100}, {'stock': 'FB', 'moving\_average': 327.5, 'RSI': 100},
 
-{'stock': 'AMZN', 'prices': [330, 332, 334, 336, 338, 340, 342, 344, 346, 348, 350, 352, 354, 356, 358]},
-
-{'stock': 'TSLA', 'prices': [600, 605, 610, 615, 620, 625, 630, 635, 640, 645, 650, 655, 660, 665, 670]},
-
-{'stock': 'NFLX', 'prices': [550, 552, 554, 556, 558, 560, 562, 564, 566, 568, 570, 572, 574, 576, 578]},
-
-{'stock': 'FB', 'prices': [320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334]},
-
-{'stock': 'NVDA', 'prices': [700, 702, 704, 706, 708, 710, 712, 714, 716, 718, 720, 722, 724, 726, 728]},
-
-{'stock': 'V', 'prices': [220, 221, 222, 223, 224, 225, 226,
-
-227, 228, 229, 230, 231, 232, 233, 234]},
-
-{'stock': 'JPM', 'prices': [150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164]}
-
-]
-
-while True:
-
-await asyncio.sleep(1) # Simular la recepción de datos cada segundo
-
-processed\_data = await asyncio.get\_event\_loop().run\_in\_executor(None, parallel\_analyze\_data, example\_data)
-
-print("Processed Data:", processed\_data)
-
-if \_\_name\_\_ == "\_\_main\_\_":
-
-asyncio.run(stream\_stock\_data())
-
-**Resultado con 10 datos bursátiles:**
-
-Processed Data: [{'stock': 'AAPL', 'moving\_average': 157.5, 'RSI': 100}, {'stock': 'GOOGL', 'moving\_average': 127.5, 'RSI': 100}, {'stock': 'MSFT', 'moving\_average': 256.42857142857144, 'RSI': 100}, {'stock': 'AMZN', 'moving\_average': 345.0, 'RSI': 100}, {'stock': 'TSLA', 'moving\_average': 637.5, 'RSI': 100}, {'stock': 'NFLX', 'moving\_average': 565.0, 'RSI': 100}, {'stock': 'FB', 'moving\_average': 327.5, 'RSI': 100}, {'stock': 'NVDA', 'moving\_average': 715.0, 'RSI': 100}, {'stock': 'V', 'moving\_average': 227.5, 'RSI': 100}, {'stock': 'JPM', 'moving\_average': 157.5, 'RSI': 100}]
+{'stock': 'NVDA', 'moving\_average': 715.0, 'RSI': 100}, {'stock': 'V', 'moving\_average': 227.5, 'RSI': 100}, {'stock': 'JPM', 'moving\_average': 157.5, 'RSI': 100}]
+```
