@@ -1,100 +1,87 @@
 ﻿**EJERCICIO 1:** Sistema de procesamiento de imágenes en tiempo real
-
-import os![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.001.png)
 ```
+import os
 from PIL import Image, ImageFilter
 
+
 import time
+from concurrent.futures import ThreadPoolExecutor
+from functools import wraps
 
-from concurrent.futures import ThreadPoolExecutor from functools import wraps
 
-def convert\_to\_grayscale(image):
+def convert_to_grayscale(image):
+    """Convierte la imagen a escala de grises."""
+    return [image.convert('L')]
 
-"""Convierte la imagen a escala de grises.""" return [image.convert('L')]
 
-def apply\_edge\_detection(image):
+def apply_edge_detection(image):
+    """Aplica detección de bordes a la imagen."""
+    return [image.filter(ImageFilter.FIND_EDGES)]
 
-"""Aplica detección de bordes a la imagen.""" return [image.filter(ImageFilter.FIND\_EDGES)]
 
-def time\_it(func):
 
-"""Decorador que mide el tiempo de ejecución de una función.""" @wraps(func)
 
-def wrapper(\*args, \*\*kwargs):
+def time_it(func):
+    """Decorador que mide el tiempo de ejecución de una función."""
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} took {end - start:.2f} seconds to run.")
+        return result
+    return wrapper
 
-start = time.time()
 
-result = func(\*args, \*\*kwargs)
+def parallelize_image_processing(function):
+    """Decorador que paraleliza el procesamiento de imágenes."""
+    @wraps(function)
+    def wrapper(images):
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            results = list(executor.map(function, images))
+        return results
+    return wrapper
 
-end = time.time()
 
-print(f"{func.\_\_name\_\_} took {end - start:.2f} seconds to
+import asyncio
 
-run.")
 
-return result return wrapper
+@time_it
+@parallelize_image_processing
+def process_images(images):
+    """Procesa una lista de imágenes aplicando las funciones de procesamiento."""
+    processed_images = [convert_to_grayscale(img)[0] for img in images]
+    processed_images = [apply_edge_detection(img)[0] for img in processed_images]
+    return processed_images
 
-def parallelize\_image\_processing(function):
-
-"""Decorador que paraleliza el procesamiento de imágenes.""" @wraps(function)
-
-def wrapper(images):
-
-with ThreadPoolExecutor(max\_workers=5) as executor:
-
-results = list(executor.map(function, images)) return results
-
-return wrapper
-
-import asyncio @time\_it
-
-def process\_images(images):
-
-"""Procesa una lista de imágenes aplicando las funciones de procesamiento."""
-
-processed\_images = [convert\_to\_grayscale(img)[0] for img in images]
-
-processed\_images = [apply\_edge\_detection(img)[0] for img in processed\_images]
-
-return processed\_images
 
 async def main():
+    # Simulando la carga de imágenes
+    #images = [Image.open(f'cat_{i}.jpg') for i in range(10)]  # Asegúrate de tener imágenes disponibles
+    #processed_images = process_images(images)
+    # Simulando la carga de imágenes
+    folder_path = r'C:\Users\Asus\Downloads\archive\data\cats'
+    images = []
+    for i in range(202):
+        image_path = os.path.join(folder_path, f'cat.{i+1}.jpg')
+        try:
+            image = Image.open(image_path)
+            images.append([image])
+        except FileNotFoundError:
+            print(f"No se encontró la imagen {image_path}")
+    processed_images = process_images(images)
 
-- Simulando la carga de imágenes
 
-#images = [Image.open(f'cat\_{i}.jpg') for i in range(10)] # Asegúrate de tener imágenes disponibles
+    # Guardar
+    output = r'C:\Users\Asus\Downloads\archive\data\cats_pro'
+    for i, processed_image_list in enumerate(processed_images):
+        processed_image = processed_image_list[0]
+        processed_image.save(os.path.join(output, f'cats_pro.{i+1}.jpg'))
+    # Aquí podrías guardar las imágenes procesadas o enviarlas a otro servicio
 
-#processed\_images = process\_images(images)
 
-- Simulando la carga de imágenes
-
-folder\_path = r'C:\Users\Asus\Downloads\archive\data\cats' images = []
-
-for i in range(202):
-
-image\_path = os.path.join(folder\_path, f'cat.{i+1}.jpg') try:
-
-image = Image.open(image\_path) images.append([image])
-
-except FileNotFoundError:
-
-print(f"No se encontró la imagen {image\_path}") processed\_images = process\_images(images)
-
-- Guardar
-
-output = r'C:\Users\Asus\Downloads\archive\data\cats\_pro'
-
-for i, processed\_image\_list in enumerate(processed\_images): processed\_image = processed\_image\_list[0] processed\_image.save(os.path.join(output,
-
-f'cats\_pro.{i+1}.jpg'))
-
-- Aquí podrías guardar las imágenes procesadas o enviarlas a otro
-
-servicio
-
-if \_\_name\_\_ == "\_\_main\_\_":
-
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
 
 ```
 
