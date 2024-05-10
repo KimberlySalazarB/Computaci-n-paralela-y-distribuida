@@ -1,4 +1,4 @@
-﻿**EJERCICIO 1:** Sistema de procesamiento de imágenes en tiempo real
+#﻿**EJERCICIO 1:** Sistema de procesamiento de imágenes en tiempo real
 ```
 import os
 from PIL import Image, ImageFilter
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
 ```
 
-Resultado:
+##**Resultado:**
 
 ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.003.png)
 
