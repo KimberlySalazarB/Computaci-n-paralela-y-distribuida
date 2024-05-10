@@ -349,7 +349,5 @@ if __name__ == "__main__":
 ```
 Processed Data: [{'stock': 'AAPL', 'moving\_average': 157.5, 'RSI': 100}, {'stock': 'GOOGL', 'moving\_average': 127.5, 'RSI': 100}, {'stock': 'MSFT', 'moving\_average': 256.42857142857144, 'RSI': 100}, {'stock': 'AMZN', 'moving\_average': 345.0, 'RSI': 100}, {'stock': 'TSLA', 'moving\_average': 637.5, 'RSI': 100}, {'stock': 'NFLX', 'moving\_average':
 
- 565.0, 'RSI': 100}, {'stock': 'FB', 'moving\_average': 327.5, 'RSI': 100},
-
-{'stock': 'NVDA', 'moving\_average': 715.0, 'RSI': 100}, {'stock': 'V', 'moving\_average': 227.5, 'RSI': 100}, {'stock': 'JPM', 'moving\_average': 157.5, 'RSI': 100}]
+ 565.0, 'RSI': 100}, {'stock': 'FB', 'moving\_average': 327.5, 'RSI': 100},{'stock': 'NVDA', 'moving\_average': 715.0, 'RSI': 100}, {'stock': 'V', 'moving\_average': 227.5, 'RSI': 100}, {'stock': 'JPM', 'moving\_average': 157.5, 'RSI': 100}]
 ```
