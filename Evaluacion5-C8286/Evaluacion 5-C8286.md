@@ -87,11 +87,11 @@ if __name__ == "__main__":
 
 Resultado:
 
-![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.003.png)
+![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.003.png)
 
 Dataset Cats de 202 imagenes= <https://www.kaggle.com/datasets/pavansanagapati/images-dataset/data>
 
-![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.004.png) ![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.005.png)
+![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.004.png) ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.005.png)
 
 **EJERCICIO 2:**Simulación de sistema de reservas con alta concurrencia
 
