@@ -18,9 +18,6 @@ def apply_edge_detection(image):
     """Aplica detección de bordes a la imagen."""
     return [image.filter(ImageFilter.FIND_EDGES)]
 
-
-
-
 def time_it(func):
     """Decorador que mide el tiempo de ejecución de una función."""
     @wraps(func)
@@ -42,10 +39,7 @@ def parallelize_image_processing(function):
         return results
     return wrapper
 
-
 import asyncio
-
-
 @time_it
 @parallelize_image_processing
 def process_images(images):
@@ -85,7 +79,7 @@ if __name__ == "__main__":
 
 ```
 
-##**Resultado:**
+### **Resultado:**
 
 ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.003.png)
 
@@ -93,83 +87,62 @@ Dataset Cats de 202 imagenes= <https://www.kaggle.com/datasets/pavansanagapati/i
 
 ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.004.png) ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.005.png)
 
-**EJERCICIO 2:**Simulación de sistema de reservas con alta concurrencia
+## **EJERCICIO 2:**Simulación de sistema de reservas con alta concurrencia
+```
+def add_reservation(reservations, reservation):
+    """Agrega una nueva reserva a la lista de reservas de manera inmutable."""
+    return reservations + [reservation]
 
-**def add\_reservation(reservations, reservation):![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.006.png)**
+def cancel_reservation(reservations, reservation_id):
+    """Cancela una reserva por ID, inmutablemente."""
+    return [res for res in reservations if res['id'] != reservation_id]
 
-**"""Agrega una nueva reserva a la lista de reservas de manera inmutable."""**
+def update_reservation(reservations, reservation_id, new_details):
+    """Actualiza una reserva por ID, inmutablemente."""
+    return [res if res['id'] != reservation_id else {**res, **new_details} for res in reservations]
+from concurrent.futures import ThreadPoolExecutor
+import copy
+import time
+import random
 
-**return reservations + [reservation]**
+def process_booking_requests(requests):
+    """Procesa una lista de solicitudes de reserva concurrentemente."""
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        results = list(executor.map(handle_request, requests))
+    return results
 
-**def cancel\_reservation(reservations, reservation\_id):**
 
-**"""Cancela una reserva por ID, inmutablemente."""**
+def handle_request(request):
+    """Maneja una solicitud individual simulando cierta lógica y tiempo de procesamiento."""
+    # Simulación de procesamiento: modificar según la lógica de negocio
+    time.sleep(random.uniform(0.1, 0.5))  # Simular tiempo de procesamiento
+    return f"Processed request {request['id']} with status: {request['status']}"
 
-**return [res for res in reservations if res['id'] != reservation\_id]**
+import asyncio
 
-**def update\_reservation(reservations, reservation\_id, new\_details):**
+async def manage_reservations(requests):
+    """Gestiona reservas asincrónicamente."""
+    loop = asyncio.get_running_loop()
+    future = loop.run_in_executor(None, process_booking_requests, requests)
+    result = await future
+    print("resultado:",result)
 
-**"""Actualiza una reserva por ID, inmutablemente."""**
 
-**return [res if res['id'] != reservation\_id else {\*\*res, \*\*new\_details} for res in reservations]**
+async def simulate_requests():
+    """Simula la llegada de solicitudes de reserva."""
+    requests = [{'id': i, 'status': 'new'} for i in range(100)]  # Simular 10 solicitudes
+    await manage_reservations(requests)
 
-**from concurrent.futures import ThreadPoolExecutor**
+if __name__ == "__main__":
+    asyncio.run(simulate_requests())
 
-**import copy**
+```
 
-**import time**
+### **RESULTADO:** Con 100 solicitudes
 
-**import random![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.007.png)**
+![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.008.jpeg)
 
-**def process\_booking\_requests(requests):**
-
-**"""Procesa una lista de solicitudes de reserva concurrentemente.""" with ThreadPoolExecutor(max\_workers=5) as executor:**
-
-**results = list(executor.map(handle\_request, requests))**
-
-**return results**
-
-**def handle\_request(request):**
-
-**"""Maneja una solicitud individual simulando cierta lógica y tiempo de procesamiento."""**
-
-- **Simulación de procesamiento: modificar según la lógica de negocio time.sleep(random.uniform(0.1, 0.5)) # Simular tiempo de**
-
-**procesamiento**
-
-**return f"Processed request {request['id']} with status: {request['status']}"**
-
-**import asyncio**
-
-**async def manage\_reservations(requests):**
-
-**"""Gestiona reservas asincrónicamente."""**
-
-**loop = asyncio.get\_running\_loop()**
-
-**future = loop.run\_in\_executor(None, process\_booking\_requests, requests)**
-
-**result = await future**
-
-**print("resultado:",result)**
-
-**async def simulate\_requests():**
-
-**"""Simula la llegada de solicitudes de reserva."""**
-
-**requests = [{'id': i, 'status': 'new'} for i in range(100)] # Simular 10 solicitudes**
-
-**await manage\_reservations(requests)**
-
-**if \_\_name\_\_ == "\_\_main\_\_":**
-
-**asyncio.run(simulate\_requests())**
-
-**RESULTADO:** Con 100 solicitudes
-
-![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.008.jpeg)
-
-Ejercicio 4: Sistema de análisis de sentimiento en tiempo real para redes sociales
+## **Ejercicio 4:** Sistema de análisis de sentimiento en tiempo real para redes sociales
 
 import re![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.009.png)
 
