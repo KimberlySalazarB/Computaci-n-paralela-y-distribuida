@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
 ```
 
-### **Resultado:**
+#### **Resultado:**
 
 ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.003.png)
 
@@ -138,105 +138,79 @@ if __name__ == "__main__":
 
 ```
 
-### **RESULTADO:** Con 100 solicitudes
+#### **RESULTADO:** Con 100 solicitudes
 
 ![](imagenes/Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.008.jpeg)
 
 ## **Ejercicio 4:** Sistema de análisis de sentimiento en tiempo real para redes sociales
-
-import re![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.009.png)
-
+```
+import re
 import nltk
-
 nltk.download('punkt')
-
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+stop_words = set(stopwords.words('english'))
 
-from nltk.tokenize import word\_tokenize
+def clean_text(text):
+    """Limpia el texto eliminando caracteres especiales y convirtiéndolo a minúsculas."""
+    text = re.sub(r'\W', ' ', text)
+    text = text.lower()
+    return text
 
-stop\_words = set(stopwords.words('english'))
+def remove_stopwords(text):
+    """Elimina las stopwords de un texto."""
+    words = word_tokenize(text)
+    filtered_words = [word for word in words if word not in stop_words]
+    return ' '.join(filtered_words)
 
-def clean\_text(text):
-
-"""Limpia el texto eliminando caracteres especiales y convirtiéndolo a minúsculas."""
-
-text = re.sub(r'\W', ' ', text)
-
-text = text.lower()
-
-return text
-
-def remove\_stopwords(text):
-
-"""Elimina las stopwords de un texto."""
-
-words = word\_tokenize(text)
-
-filtered\_words = [word for word in words if word not in stop\_words] return ' '.join(filtered\_words)
-
-def preprocess\_text(text):
-
-"""Combina todas las operaciones de preprocesamiento de texto.""" ![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.010.png)text = clean\_text(text)
-
-text = remove\_stopwords(text)
-
-return text
-
+def preprocess_text(text):
+    """Combina todas las operaciones de preprocesamiento de texto."""
+    text = clean_text(text)
+    text = remove_stopwords(text)
+    return text
 from textblob import TextBlob
-
-def analyze\_sentiment(text):
-
-"""Analiza el sentimiento de un texto dado y devuelve el resultado."""
-
-analysis = TextBlob(text)
-
-return analysis.sentiment
-
+def analyze_sentiment(text):
+    """Analiza el sentimiento de un texto dado y devuelve el resultado."""
+    analysis = TextBlob(text)
+    return analysis.sentiment
 from concurrent.futures import ThreadPoolExecutor
 
-def analyze\_texts\_concurrently(texts):
+def analyze_texts_concurrently(texts):
+    """Analiza una lista de textos concurrentemente."""
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        results = list(executor.map(preprocess_and_analyze, texts))
+    return results
 
-"""Analiza una lista de textos concurrentemente."""
-
-with ThreadPoolExecutor(max\_workers=10) as executor:
-
-results = list(executor.map(preprocess\_and\_analyze, texts)) return results
-
-def preprocess\_and\_analyze(text):
-
-"""Preprocesa y analiza el sentimiento de un texto.""" preprocessed\_text = preprocess\_text(text)
-
-sentiment = analyze\_sentiment(preprocessed\_text) return sentiment
-
+def preprocess_and_analyze(text):
+    """Preprocesa y analiza el sentimiento de un texto."""
+    preprocessed_text = preprocess_text(text)
+    sentiment = analyze_sentiment(preprocessed_text)
+    return sentiment
 import asyncio
 
-async def collect\_and\_process\_data(stream\_data):
+async def collect_and_process_data(stream_data):
+    """Asíncronamente recolecta y procesa datos de un flujo."""
+    processed_data = await asyncio.get_event_loop().run_in_executor(None, analyze_texts_concurrently, stream_data)
+    print("Sentiment Analysis Results:", processed_data)
 
-"""Asíncronamente recolecta y procesa datos de un flujo."""
+async def simulate_streaming_data():
+    """Simula la llegada de datos de texto de un flujo en tiempo real."""
+    sample_data = [
+        "This video is amazing! I love it.",
+        "I'm fed up with this. I can't believe what's happening.",
+        "Wow! I never expected to see something like this.",
+        "This is so sad. I can't help but feel bad for them.",
+        "Sending love and support from here. Stay strong!",
+        "Incredible! You really left me speechless."
+    ]
+    await collect_and_process_data(sample_data)
 
-processed\_data = await asyncio.get\_event\_loop().run\_in\_executor(None, analyze\_texts\_concurrently, stream\_data)
 
-print("Sentiment Analysis Results:", processed\_data)
+if __name__ == "__main__":
+    asyncio.run(simulate_streaming_data())
 
-async def simulate\_streaming\_data():
-
-"""Simula la llegada de datos de texto de un flujo en tiempo real."""
-
-sample\_data = [
-
-"This video is amazing! I love it.",
-
-"I'm fed up with this. I can't believe what's happening.", "Wow! I never expected to see something like this.", "This is so sad. I can't help but feel bad for them.", "Sending love and support from here. Stay strong!", "Incredible! You really left me speechless."
-
-]![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.011.png)
-
-await collect\_and\_process\_data(sample\_data)
-
-if \_\_name\_\_ == "\_\_main\_\_":
-
-asyncio.run(simulate\_streaming\_data())
-
-**RESULTADOS:** De 6 comentarios de un video.
+```
+#### **RESULTADOS:** De 6 comentarios de un video.
 
 Sentiment Analysis Results: [Sentiment(polarity=0.55, subjectivity=0.75), Sentiment(polarity=0.0, subjectivity=0.0), Sentiment(polarity=0.07500000000000001, subjectivity=0.7), Sentiment(polarity=-0.5999999999999999, subjectivity=0.8333333333333333), Sentiment(polarity=0.4666666666666667, subjectivity=0.6666666666666666), Sentiment(polarity=0.45, subjectivity=0.45)]
 
