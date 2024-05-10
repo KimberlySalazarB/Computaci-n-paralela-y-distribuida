@@ -1,7 +1,7 @@
 ﻿**EJERCICIO 1:** Sistema de procesamiento de imágenes en tiempo real
 
 import os![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.001.png)
-´´´
+```
 from PIL import Image, ImageFilter
 
 import time
@@ -96,7 +96,7 @@ if \_\_name\_\_ == "\_\_main\_\_":
 
 asyncio.run(main())
 
-´´´
+```
 
 Resultado:
 
