@@ -211,113 +211,71 @@ if __name__ == "__main__":
 
 ```
 #### **RESULTADOS:** De 6 comentarios de un video.
-
+```
 Sentiment Analysis Results: [Sentiment(polarity=0.55, subjectivity=0.75), Sentiment(polarity=0.0, subjectivity=0.0), Sentiment(polarity=0.07500000000000001, subjectivity=0.7), Sentiment(polarity=-0.5999999999999999, subjectivity=0.8333333333333333), Sentiment(polarity=0.4666666666666667, subjectivity=0.6666666666666666), Sentiment(polarity=0.45, subjectivity=0.45)]
+```
+## **Ejercicio 5:** Plataforma de análisis de datos genómicos distribuidos
+```
+def filter_variants(variants, min_depth=10, min_quality=20):
+    """Filtra variantes genéticas basadas en profundidad y calidad."""
+    return [variant for variant in variants if variant['depth'] >= min_depth and variant['quality'] >= min_quality]
 
-Ejercicio 5: Plataforma de análisis de datos genómicos distribuidos
-
-def filter\_variants(variants, min\_depth=10, min\_quality=20):![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.012.png)
-
-"""Filtra variantes genéticas basadas en profundidad y calidad."""
-
-return [variant for variant in variants if variant['depth'] >= min\_depth and variant['quality'] >= min\_quality]
-
-def calculate\_allele\_frequencies(variants):
-
-"""Calcula las frecuencias alélicas de un conjunto de variantes genéticas."""
-
-allele\_counts = {}
-
-for variant in variants:
-
-alleles = variant['alleles']
-
-for allele in alleles:
-
-if allele in allele\_counts:
-
-allele\_counts[allele] += 1
-
-else:
-
-allele\_counts[allele] = 1
-
-total\_alleles = sum(allele\_counts.values())
-
-return {allele: count / total\_alleles for allele, count in allele\_counts.items()}
-
+def calculate_allele_frequencies(variants):
+    """Calcula las frecuencias alélicas de un conjunto de variantes genéticas."""
+    allele_counts = {}
+    for variant in variants:
+        alleles = variant['alleles']
+        for allele in alleles:
+            if allele in allele_counts:
+                allele_counts[allele] += 1
+            else:
+                allele_counts[allele] = 1
+    total_alleles = sum(allele_counts.values())
+    return {allele: count / total_alleles for allele, count in allele_counts.items()}
 from multiprocessing import Pool
 
-def process\_genomic\_data(data):
+def process_genomic_data(data):
+    """Procesa datos genómicos en paralelo utilizando múltiples procesos."""
+    with Pool(processes=4) as pool:
+        results = pool.map(process_sample, data)
+    return results
 
-"""Procesa datos genómicos en paralelo utilizando múltiples procesos."""
-
-with Pool(processes=4) as pool:
-
-results = pool.map(process\_sample, data)
-
-return results![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.013.png)
-
-def process\_sample(sample):
-
-"""Procesa un único conjunto de datos genómicos."""
-
-filtered\_variants = filter\_variants(sample['variants'])
-
-allele\_frequencies = calculate\_allele\_frequencies(filtered\_variants)
-
-return {'sample\_id': sample['id'], 'allele\_frequencies': allele\_frequencies}
-
+def process_sample(sample):
+    """Procesa un único conjunto de datos genómicos."""
+    filtered_variants = filter_variants(sample['variants'])
+    allele_frequencies = calculate_allele_frequencies(filtered_variants)
+    return {'sample_id': sample['id'], 'allele_frequencies': allele_frequencies}
 import asyncio
 
-async def load\_genomic\_data(file\_path):
+async def load_genomic_data(file_path):
+    """Carga datos genómicos de forma asíncrona."""
+    # Simulación: en un caso real, se leerían los datos de un archivo
+    return [
+        {'id': 'sample1', 'variants': [{'depth': 15, 'quality': 30, 'alleles': ['A', 'T']}, {'depth': 20, 'quality': 25, 'alleles': ['G', 'C']}]},
+        {'id': 'sample2', 'variants': [{'depth': 12, 'quality': 22, 'alleles': ['T', 'T']}, {'depth': 18, 'quality': 28, 'alleles': ['A', 'C']}]},
+        {'id': 'sample3', 'variants': [{'depth': 18, 'quality': 26, 'alleles': ['A', 'T']}, {'depth': 22, 'quality': 35, 'alleles': ['C', 'G']}]},
+        {'id': 'sample4', 'variants': [{'depth': 14, 'quality': 21, 'alleles': ['G', 'G']}, {'depth': 16, 'quality': 28, 'alleles': ['T', 'C']}]},
+        {'id': 'sample5', 'variants': [{'depth': 20, 'quality': 30, 'alleles': ['A', 'C']}, {'depth': 25, 'quality': 28, 'alleles': ['G', 'T']}]},
+        {'id': 'sample6', 'variants': [{'depth': 16, 'quality': 24, 'alleles': ['G', 'A']}, {'depth': 21, 'quality': 32, 'alleles': ['T', 'C']}]},
+        {'id': 'sample7', 'variants': [{'depth': 18, 'quality': 26, 'alleles': ['T', 'T']}, {'depth': 22, 'quality': 35, 'alleles': ['C', 'C']}]},
+        {'id': 'sample8', 'variants': [{'depth': 14, 'quality': 21, 'alleles': ['C', 'A']}, {'depth': 16, 'quality': 28, 'alleles': ['T', 'G']}]},
+        {'id': 'sample9', 'variants': [{'depth': 20, 'quality': 30, 'alleles': ['G', 'T']}, {'depth': 25, 'quality': 28, 'alleles': ['A', 'C']}]},
+        {'id': 'sample10', 'variants': [{'depth': 16, 'quality': 24, 'alleles': ['T', 'T']}, {'depth': 21, 'quality': 32, 'alleles': ['C', 'A']}]},
+        {'id': 'sample11', 'variants': [{'depth': 18, 'quality': 26, 'alleles': ['A', 'C']}, {'depth': 22, 'quality': 35, 'alleles': ['T', 'G']}]},
+        {'id': 'sample12', 'variants': [{'depth': 14, 'quality': 21, 'alleles': ['G', 'A']}, {'depth': 16, 'quality': 28, 'alleles': ['C', 'T']}]}
+    ]
 
-"""Carga datos genómicos de forma asíncrona."""
+async def analyze_genomic_data(file_path):
+    """Analiza datos genómicos utilizando funciones asincrónicas y paralelismo."""
+    data = await load_genomic_data(file_path)
+    results = await asyncio.get_event_loop().run_in_executor(None, process_genomic_data, data)
+    for result in results:
+        print(result)
 
-- Simulación: en un caso real, se leerían los datos de un archivo return [
 
-{'id': 'sample1', 'variants': [{'depth': 15, 'quality': 30, 'alleles': ['A', 'T']}, {'depth': 20, 'quality': 25, 'alleles': ['G', 'C']}]},
-
-{'id': 'sample2', 'variants': [{'depth': 12, 'quality': 22, 'alleles': ['T', 'T']}, {'depth': 18, 'quality': 28, 'alleles': ['A', 'C']}]},
-
-{'id': 'sample3', 'variants': [{'depth': 18, 'quality': 26, 'alleles': ['A', 'T']}, {'depth': 22, 'quality': 35, 'alleles': ['C', 'G']}]},
-
-{'id': 'sample4', 'variants': [{'depth': 14, 'quality': 21, 'alleles': ['G', 'G']}, {'depth': 16, 'quality': 28, 'alleles': ['T', 'C']}]},
-
-{'id': 'sample5', 'variants': [{'depth': 20, 'quality': 30, 'alleles': ['A', 'C']}, {'depth': 25, 'quality': 28, 'alleles': ['G', 'T']}]},
-
-{'id': 'sample6', 'variants': [{'depth': 16, 'quality': 24, 'alleles': ['G', 'A']}, {'depth': 21, 'quality': 32, 'alleles': ['T', 'C']}]},
-
-{'id': 'sample7', 'variants': [{'depth': 18, 'quality': 26, 'alleles': ['T', 'T']}, {'depth': 22, 'quality': 35, 'alleles': ['C', 'C']}]},
-
-{'id': 'sample8', 'variants': [{'depth': 14, 'quality': 21, 'alleles': ['C', 'A']}, {'depth': 16, 'quality': 28, 'alleles': ['T', 'G']}]},
-
-{'id': 'sample9', 'variants': [{'depth': 20, 'quality': 30, 'alleles': ['G', 'T']}, {'depth': 25, 'quality': 28, 'alleles': ['A', 'C']}]},
-
-{'id': 'sample10', 'variants': [{'depth': 16, 'quality': 24, ![](Aspose.Words.8290ba66-b50f-44fa-83c8-bc17d4ca0736.014.png)'alleles': ['T', 'T']}, {'depth': 21, 'quality': 32, 'alleles': ['C', 'A']}]},
-
-{'id': 'sample11', 'variants': [{'depth': 18, 'quality': 26, 'alleles': ['A', 'C']}, {'depth': 22, 'quality': 35, 'alleles': ['T', 'G']}]},
-
-{'id': 'sample12', 'variants': [{'depth': 14, 'quality': 21, 'alleles': ['G', 'A']}, {'depth': 16, 'quality': 28, 'alleles': ['C', 'T']}]}
-
-]
-
-async def analyze\_genomic\_data(file\_path):
-
-"""Analiza datos genómicos utilizando funciones asincrónicas y paralelismo."""
-
-data = await load\_genomic\_data(file\_path)
-
-results = await asyncio.get\_event\_loop().run\_in\_executor(None, process\_genomic\_data, data)
-
-for result in results:
-
-print(result)
-
-if \_\_name\_\_ == "\_\_main\_\_":
-
-asyncio.run(analyze\_genomic\_data('path\_to\_genomic\_data.txt'))
-
+if __name__ == "__main__":
+    asyncio.run(analyze_genomic_data('path_to_genomic_data.txt'))
+```
 **Resultados de 12 datos genómicos:**
 
 {'sample\_id': 'sample1', 'allele\_frequencies': {'A': 0.25, 'T': 0.25, 'G': 0.25, 'C': 0.25}} {'sample\_id': 'sample2', 'allele\_frequencies': {'T': 0.5, 'A': 0.25, 'C': 0.25}} {'sample\_id': 'sample3', 'allele\_frequencies': {'A': 0.25, 'T': 0.25, 'C': 0.25, 'G': 0.25}} {'sample\_id': 'sample4', 'allele\_frequencies': {'G': 0.5, 'T': 0.25, 'C': 0.25}} {'sample\_id': 'sample5', 'allele\_frequencies': {'A': 0.25, 'C': 0.25, 'G': 0.25, 'T': 0.25}} {'sample\_id': 'sample6', 'allele\_frequencies': {'G': 0.25, 'A': 0.25, 'T': 0.25, 'C': 0.25}} {'sample\_id': 'sample7', 'allele\_frequencies': {'T': 0.5, 'C': 0.5}}
