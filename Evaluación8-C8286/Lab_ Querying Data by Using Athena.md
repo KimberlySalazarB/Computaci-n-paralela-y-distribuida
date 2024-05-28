@@ -34,13 +34,7 @@ Nombre de la tabla: yellow
 
 En la sección Detalles de la columna, elija Agregar columnas de forma masiva. Y colocar el el siguiente texto. Por último, **Create table**.
 
-vendor string, ![](imagenes/Aspose.Words.67c063a5-7f62-4515-9267-2cd25460fa5e.005.png)pickup timestamp, dropoff timestamp, count int,
 
-distance int, ratecode string, storeflag string, pulocid string, dolocid string, paytype string, fare decimal,
-
-extra decimal, mta\_tax decimal, tip decimal,
-
-tolls decimal, surcharge decimal, total decimal
 
 ![](imagenes/Aspose.Words.67c063a5-7f62-4515-9267-2cd25460fa5e.006.jpeg)
 
