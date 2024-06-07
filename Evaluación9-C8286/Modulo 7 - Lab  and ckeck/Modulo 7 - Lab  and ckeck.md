@@ -11,7 +11,7 @@ Primero, configurará y creará un rastreador para descubrir el esquema del conj
 - Para Nombre, ingrese Weather
 - Elija **Siguiente** en la parte inferior de la página.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.001.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.001.jpeg)
 
 - Elija **Agregar una fuente de datos** y configure lo siguiente:
 - Fuente de datos: elija S3.
@@ -22,7 +22,7 @@ Primero, configurará y creará un rastreador para descubrir el esquema del conj
 
 - Elija **S3 data source**.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.002.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.002.jpeg)
 
 Elija **Next.**
 
@@ -30,13 +30,13 @@ Para la función **IAM role**, elija **gluelab**.
 
 Esta función se le proporcionó en el entorno del laboratorio.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.003.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.003.jpeg)
 
 Elija **Next.**
 
 Elija **Crear base de datos.**
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.004.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.004.jpeg)
 
 En la sección **Crawler**,mantenga el valor predeterminado. Elija **Next.**
 
@@ -44,25 +44,25 @@ Confirme que la configuración, elija **Create crawler.**
 
 Puede crear rastreadores de AWS Glue para que se ejecuten bajo demanda o según un cronograma establecido. Debido a que creó su rastreador para ejecutarse bajo demanda, debe ejecutarlo para crear la base de datos y generar los metadatos.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.005.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.005.jpeg)
 
 - Revise los metadatos que creó AWS Glue.
 - En el panel de navegación, elija Bases de datos.
 - Elija el enlace a la base de datos de datos meteorológicos.
 - En la sección Tablas, elija **by\_year**.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.006.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.006.jpeg)
 
 Revise los metadatos que capturó el rastreador meteorológico, como se muestra en la siguiente captura de pantalla.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.007.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.007.jpeg)
 
 - Edite el esquema.
 - En el menú Acciones en la esquina superior derecha de la página, elija Editar esquema.
 - Cambie los nombres de las columnas según la siguiente tabla.
 - Y actualizar.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.008.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.008.jpeg)
 
 **Tarea 2: consultar una tabla mediante Athena**
 
@@ -82,9 +82,9 @@ Vista previa de una tabla en Athena.
 
   Se muestran los primeros 10 registros de la tabla de datos meteorológicos, similar a la siguiente captura de pantalla:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.009.png)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.009.png)
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.010.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.010.jpeg)
 
 Cree una tabla para datos posteriores a 1950.
 
@@ -94,9 +94,9 @@ Cree una tabla para datos posteriores a 1950.
 - Regrese al editor de consultas de Athena.
 - Copie y pegue la siguiente consulta en una pestaña de consulta en el editor. Reemplace <glue-1950-bucket> con el nombre del depósito que registró:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.011.png)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.011.png)
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.012.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.012.jpeg)
 
 Después de ejecutar la consulta, los valores de tiempo de ejecución y datos analizados son similares a los siguientes:
 
@@ -106,26 +106,26 @@ Tiempo de ejecución: 1 min 7.982 seg Datos escaneados: 101.43 GB
 
 Para obtener una vista previa de los resultados, en la sección Tablas, a la derecha de la tabla late20th.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.013.png)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.013.png)
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.014.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.014.jpeg)
 
 Ejecute una consulta en la nueva tabla.
 
 - Primero, cree una vista que solo incluya la lectura de temperatura máxima, o valor TMAX.
 - Ejecute la siguiente consulta en una nueva pestaña de consulta:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.015.png)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.015.png)
 
 Para obtener una vista previa de los resultados, en la sección Vistas, a la derecha de la vista **tmax**, elija el icono de puntos suspensivos y luego elija Vista previa.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.016.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.016.jpeg)
 
 Ejecute la siguiente consulta en una nueva pestaña de consulta.
 
 El propósito de esta consulta es calcular la temperatura máxima promedio para cada año en el conjunto de datos.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.017.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.017.jpeg)
 
 Después de ejecutar la consulta, los valores de tiempo de ejecución y datos analizados son similares a los siguientes:
 
@@ -135,7 +135,7 @@ Tiempo de ejecución: 32.959 sec Datos escaneados: 2,27 GB
 
 Los resultados muestran la temperatura máxima promedio para cada año desde 1950 hasta 2015. La siguiente captura de pantalla :
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.018.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.018.jpeg)
 
 **Tarea 3: Crear una plantilla de CloudFormation para un rastreador de AWS Glue**
 
@@ -145,12 +145,12 @@ Busque el número de recurso de Amazon (ARN) para la función de IAM de Gluelab.
 - En el panel de navegación, elija Roles.
 - Elija el enlace para el rol de Gluelab.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.019.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.019.jpeg)
 
 - El ARN se muestra en la página de la sección Resumen.
 - Copie el ARN a un editor de texto para usarlo en el siguiente paso.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.020.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.020.jpeg)
 
 Navegue hasta el entorno de desarrollo integrado (IDE) de AWS Cloud9.
 
@@ -160,35 +160,35 @@ Navegue hasta el entorno de desarrollo integrado (IDE) de AWS Cloud9.
 - Guarde el archivo vacío como **gluecrawler.cf.yml** pero manténgalo abierto.
 - Copie y pegue el siguiente código en el archivo
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.021.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.021.jpeg)
 
 Para validar la plantilla de CloudFormation, ejecute el siguiente comando en la terminal AWS Cloud9: **aws cloudformation validate-template --template-body file://gluecrawler.cf.yml**
 
 Si la plantilla está validada, se muestra el siguiente resultado:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.022.png)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.022.png)
 
 Para crear la pila de CloudFormation, ejecute el siguiente comando
 
 Si la pila está validada, el ARN de CloudFormation se muestra en el resultado, similar al siguiente:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.023.png)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.023.png)
 
 Para verificar que la base de datos de AWS Glue se creó en la pila, ejecute el siguiente comando: **aws glue get-databases**
 
 El resultado es similar al siguiente:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.024.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.024.jpeg)
 
 Verifique que el rastreador se haya creado en la pila. El resultado es similar al siguiente:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.025.png)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.025.png)
 
 Para recuperar los detalles del rastreador, ejecute el siguiente comando. **aws glue get-crawler --name cfn-crawler-weather**
 
 El resultado es similar al siguiente:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.026.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.026.jpeg)
 
 **Tarea 4: Revisión de la política de IAM para el acceso a Athena y AWS Glue**
 
@@ -199,11 +199,11 @@ Revise la política de Policy-For-Data-Scientists de datos en IAM.
 - En la lista de políticas adjuntas al grupo, elija el enlace de la política Política para científicos de datos.
 - Se abre la página de detalles de Políticas para científicos de datos. Revise los permisos asociados con esta política. Tenga en cuenta que los permisos proporcionan acceso limitado únicamente a los servicios Athena, AWS Glue y Amazon S3.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.027.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.027.jpeg)
 
 Para ver más de cerca los detalles de la política de IAM, elija {} JSON. En el archivo de política JSON, puede ver las acciones permitidas y denegadas, incluidos los recursos en los que los usuarios pueden realizar acciones.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.028.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.028.jpeg)
 
 **Tarea 5: Confirmar que Mary puede acceder y utilizar el rastreador de AWS Glue**
 
@@ -212,7 +212,7 @@ Recupere las credenciales del usuario mary IAM y guárdelas como variables bash.
 - Copie el valor de MarysAccessKey a su portapapeles.
 - Copie el valor de MarysSecretAccessKey en su portapapeles.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.029.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.029.jpeg)
 
 Regrese a la terminal AWS Cloud9.
 
@@ -223,11 +223,11 @@ Pruebe el acceso de Mary al rastreador de AWS Glue.
 
 Para probar si el usuario mary puede ejecutar el comando list-crawlers, ejecute el siguiente comando:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.030.png)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.030.png)
 
 Para probar si el usuario mary puede ejecutar el comando get-crawler, ejecute el siguiente comando:
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.031.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.031.jpeg)
 
 Pruebe que el usuario mary pueda ejecutar el rastreador.
 
@@ -241,7 +241,7 @@ En el panel de navegación, elija Crawlers.
 
 Aquí puede ver información de estado del rastreador, como se muestra en la siguiente captura de pantalla.
 
-![](Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.032.jpeg)
+![](imagenes/Aspose.Words.30a466ef-3765-4ebc-af12-b1ff90bd8293.032.jpeg)
 
 Para confirmar que el rastreador ha terminado de ejecutarse, ejecute el siguiente comando. El resultado es similar al siguiente:
 
