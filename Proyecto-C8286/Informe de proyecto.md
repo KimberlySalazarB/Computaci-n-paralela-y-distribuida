@@ -1,4 +1,4 @@
-#﻿ **Informe de proyecto de Implementación de algoritmos de machine learning distribuidos**
+# **Informe de proyecto de Implementación de algoritmos de machine learning distribuidos**
 
 ### **Objetivo del Proyecto**
 
@@ -9,13 +9,21 @@ El objetivo de este proyecto es desarrollar e implementar algoritmos de machine 
 - Desarrollar un conjunto de algoritmos de machine learning que incluyan enfoques de ensamblado, visión computacional y clustering.
 - Preparar conjuntos de datos adecuados para el entrenamiento y evaluación de los algoritmos.
 
-  ####**Metodología**
+  #### **Metodología**
 
   **Herramientas y Técnicas Utilizadas**
 
 - **Librerías:** PyTorch, Scikit-learn, numpy , pandas y matplotlib.
 - **Métricas de Evaluación:** Accuracy, Silhouette Score, Davies-Bouldin Index, precision\_score.
-
+*Se recomienda descargar las siguientes librerías mencionadas anteriormente*
+```
+pip install scikit-learn
+pip install torch
+pip install torchvision
+pip install pandas
+pip install numpy
+pip install matplotlib 
+```
 **Descripción de los Algoritmos Desarrollados**
 
 - **Ensamblado:** Random Forest, Gradient Boosting, XGBoost y VotingClassifier.
