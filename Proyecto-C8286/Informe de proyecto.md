@@ -1,15 +1,15 @@
-﻿**Informe de proyecto de Implementación de algoritmos de machine learning distribuidos**
+#﻿ **Informe de proyecto de Implementación de algoritmos de machine learning distribuidos**
 
-**Objetivo del Proyecto**
+### **Objetivo del Proyecto**
 
 El objetivo de este proyecto es desarrollar e implementar algoritmos de machine learning distribuidos utilizando técnicas de paralelismo y herramientas como Dask y PySpark, optimizando su rendimiento y escalabilidad.
 
-**Sprint 1: Desarrollo de un conjunto de algoritmos de Machine Learning Objetivos:**
+## **Sprint 1: Desarrollo de un conjunto de algoritmos de Machine Learning Objetivos:**
 
 - Desarrollar un conjunto de algoritmos de machine learning que incluyan enfoques de ensamblado, visión computacional y clustering.
 - Preparar conjuntos de datos adecuados para el entrenamiento y evaluación de los algoritmos.
 
-  **Metodología**
+  ####**Metodología**
 
   **Herramientas y Técnicas Utilizadas**
 
@@ -24,17 +24,21 @@ El objetivo de este proyecto es desarrollar e implementar algoritmos de machine 
 
 **Selección y Preparación de Datos**
 
-**Descripción de los Conjuntos de Datos**
+### **Descripción de los Conjuntos de Datos**
 
 - **Visión Computacional:** Conjunto de imágenes (gatos y perros)
 
-  Este conjunto de datos abarca una colección de imágenes seleccionadas específicamente con el fin de clasificar entre perros y gatos. Con un total de 25000 imágenes únicas**.** Esta data está compuesta por un archivo .csv donde contiene las etiquetas y una carpeta donde tiene todas las imagenes. https://www.kaggle.com/datasets/ashfakyeafi/cat-dog-images-for-classification?select
+  Este conjunto de datos abarca una colección de imágenes seleccionadas específicamente con el fin de clasificar entre perros y gatos. Con un total de 25000 imágenes únicas**.** Esta data está compuesta por un archivo .csv donde contiene las etiquetas y una carpeta donde tiene todas las imagenes.
+
+https://www.kaggle.com/datasets/ashfakyeafi/cat-dog-images-for-classification?select
 
   =cat\_dog.csv
 
 - **Clustering:** Datos tabulares (Datos nutricionales del menú de Burger King)
 
-  Este conjunto de datos es una recopilación completa de información nutricional de los principales elementos del menú que ofrece Burger King. El conjunto de datos incluye información sobre la cantidad de calorías, grasas totales, grasas saturadas, grasas trans, colesterol, sodio, carbohidratos totales y proteínas que se encuentran en cada elemento del menú. <https://www.kaggle.com/datasets/mattop/burger-king-menu-nutrition-data/data>
+  Este conjunto de datos es una recopilación completa de información nutricional de los principales elementos del menú que ofrece Burger King. El conjunto de datos incluye información sobre la cantidad de calorías, grasas totales, grasas saturadas, grasas trans, colesterol, sodio, carbohidratos totales y proteínas que se encuentran en cada elemento del menú.
+
+ <https://www.kaggle.com/datasets/mattop/burger-king-menu-nutrition-data/data>
 
 - **Ensamblado:** Datos tabulares (Conjunto de datos sobre diabetes\*\*
 
@@ -62,30 +66,33 @@ El objetivo de este proyecto es desarrollar e implementar algoritmos de machine 
 
   Edad: Para expresar la edad.
 
-  Resultado: Para expresar el resultado final 1 es Sí y 0 es No https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset
+  Resultado: Para expresar el resultado final 1 es Sí y 0 es No
 
-**Proceso de Preprocesamiento de Datos**
+   https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset
+
+### **Proceso de Preprocesamiento de Datos**
 
 - **Normalización:** Escalar los datos de tal manera que tengan una media de 0 y una desviación estándar de 1. Para ello, se utilizó **StandardScaler** de la librería sklearn.preprocessing.
 - **Eliminación de Valores Nulos:** Tratamiento de datos faltantes. Se utilizó los métodos **isnull().sum()** lo cual ayuda a detectar si hay valores nulos en la data.
-- **Transformaciones Específicas:** Conversión de formatos y preparación adecuada para los modelos.![ref1]
-1. **Desarrollo de Algoritmos de Ensamblado**
+- **Transformaciones Específicas:** Conversión de formatos y preparación adecuada para los modelos.
+  
+## 1. **Desarrollo de Algoritmos de Ensamblado**
 
 Se utilizó un conjunto de datos sobre la diabetes donde se predice si tiene diabetes sabiendo su nivel de glucosa, índice de masa corporal y edad.
 
 Para ello, se utilizó los siguientes algoritmos:
 
-**Random Forest**
+#### **Random Forest**
 
 - **Implementación:** Usando Scikit-learn y el algoritmo de RandomForestClassifier
 - **Resultados y Evaluación:** Accuracy: 73.3%, Precisión: 70.7%
 
-**Gradient Boosting**
+#### **Gradient Boosting**
 
 - **Implementación:** Usando Scikit-learn y el algoritmo de GradientBoostingClassifier
 - **Resultados y Evaluación:** Accuracy: 76.6%, Precisión: 74.3%
 
-**XGBoost**
+#### **XGBoost**
 
 - **Implementación:** Usando librería de XGBoost
 - **Resultados y Evaluación:** Accuracy: 75.32%, Precisión: 73.04%
@@ -93,12 +100,13 @@ Para ello, se utilizó los siguientes algoritmos:
 **VotingClassifier:** Para combinar múltiples modelos para mejorar la precisión y la robustez de las predicciones (https://inteligencia-artificial.dev/ensemble-learning-python/).
 
 - **Implementación:** Usando Scikit-learn y VotingClassifier.
-- **Resultados y Evaluación:** Accuracy: 74.67 %, Precisión: 72.32%![ref1]
-2. **Desarrollo de Algoritmo de Visión Computacional**
+- **Resultados y Evaluación:** Accuracy: 74.67 %, Precisión: 72.32%
+  
+### 2. **Desarrollo de Algoritmo de Visión Computacional**
 
 Para el desarrollo de este algoritmo se seleccionó la data de gatos y perros con un total de 25000 imágenes. Además, se entrenó una red neuronal convolucional(CNN). Para ello, se tomó referencia de la pagina web de PyTorch (https://pytorch.org/tutorials/beginner/blitz/cifar10\_tutorial.html)
 
-**Modelos de CNN**
+#### **Modelos de CNN**
 
 - **Implementación:** Usando PyTorch, las librerías de torch y torchvision, pandas y os
 - **Metodología:**
@@ -125,14 +133,15 @@ Por último, se guarda el modelo y se obtienen las predicciones de las imágenes
 - **Resultados y Evaluación:**
 - Precisión de la red en las 5000 imágenes de prueba: 71 %
 - Precisión para la clase: cat es 82.8 %
-- Precisión para la clase: dog es 60.6 %![](Aspose.Words.aba2a09a-0a31-43ff-98c4-462772e9c1c9.002.png)
-3. **Desarrollo de Algoritmos de Clustering**
+- Precisión para la clase: dog es 60.6 %
+  
+### 3. **Desarrollo de Algoritmos de Clustering**
 
 Para el desarrollo de los algoritmos se utilizó Datos nutricionales del menú de Burger King. Donde se seleccionaron las columnas de Grasas totales y total de carbohidratos.
 
 Para ello, se realizó la búsqueda de valores nulos en la data, la descripción de los datos así como la media y la desviación estándar. Luego, se seleccionaron las columnas mencionadas y se normalizaron los datos para después pasarlo al entrenamiento con los siguientes algoritmos:
 
-**K-means:** En este algoritmo se asignó dos clusters y se seleccionaron los centroides iniciales de forma aleatoria.
+#### **K-means:** En este algoritmo se asignó dos clusters y se seleccionaron los centroides iniciales de forma aleatoria.
 
 - **Implementación:** Usando Scikit-learn : from sklearn.cluster import KMeans, importamos la librería de matplotlib.pyplot as plt ( para ver la gráfica de los clusters) . Para evaluar la calidad de los clusters se utilizaron las siguientes métricas: **Silhouette Score:** Sirve para evaluar la cohesión y la separación de los clusters en un conjunto de datos
 
@@ -142,7 +151,7 @@ Para ello, se realizó la búsqueda de valores nulos en la data, la descripción
 - Silhouette Score: 0.529 → Es un valor cercano a 1 lo que indica que el punto de datos está bien dentro de su propio clúster y lejos de otros clústeres.
 - Davies-Bouldin Index: 0.68 → Es menos que 1 indica una mejor partición.
 
-**DBSCAN**
+#### **DBSCAN**
 
 - **Implementación:** Usando Scikit-learn: from sklearn.cluster import DBSCAN, importamos la librería de matplotlib.pyplot as plt ( para ver la gráfica de los clusters) .
 
@@ -152,7 +161,7 @@ Para ello, se realizó la búsqueda de valores nulos en la data, la descripción
 - Silhouette Score: 0.46 → Es un valor cercano a 1 lo que indica que el punto de datos está bien dentro de su propio clúster y lejos de otros clústeres.
 - Davies-Bouldin Index: 1.18 → Los clústeres están más dispersos y menos definidos
 
-**Agglomerative Clustering**
+#### **Agglomerative Clustering**
 
 - **Implementación:** Usando Scikit-learn: from sklearn.cluster import AgglomerativeClustering, importamos la librería de matplotlib.pyplot as plt ( para ver la gráfica de los clusters) .
 
@@ -162,4 +171,4 @@ Para ello, se realizó la búsqueda de valores nulos en la data, la descripción
 - Silhouette Score: 0.501 → Es un valor cercano a 1 lo que indica que el punto de datos está bien dentro de su propio clúster y lejos de otros clústeres.
 - Davies-Bouldin Index: 0.729 → Los clústeres están más dispersos y menos definidos.
 
-[ref1]: Aspose.Words.aba2a09a-0a31-43ff-98c4-462772e9c1c9.001.png
+
