@@ -18,7 +18,7 @@
 
 -  Se procesará los conjuntos de datos y dejarlo listos para el entrenamiento.
 -  Desarrollo de Algoritmos de ensamblado, visión computacional y clustering desarrollados.
-- 
+
 ##### **Sprint 2: Implementación de técnicas de paralelismo y distribución utilizando Dask y PySpark**
 
 - Se desarrollará Algoritmos de machine learning implementados con Dask y PySpark.
