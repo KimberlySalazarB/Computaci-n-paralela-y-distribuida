@@ -36,7 +36,6 @@
 |Implementación con Dask|16/06/2024|22/06/2024|Modelos entrenados|
 |Implementación con PySpark|16/06/2024|22/06/2024|Modelos entrenado|
 |Evaluación comparativa|21/06/2024|22/06/2024|Resultados preliminares|
-| - | - | - | - |
 |Documentación|20/06/2024|22/06/2024|Informe finalizado|
 
 ## 3. **Implementación**
