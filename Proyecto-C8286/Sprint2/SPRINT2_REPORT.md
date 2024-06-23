@@ -108,9 +108,9 @@
 
 #### **Evaluación del modelo con la métrica Silhouette Score y Davies-Bouldin Index  (K-means)**
 
-![](Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.008.png)
+![](imagenes/Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.008.png)
 
-![](Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.009.png)
+![](imagenes/Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.009.png)
 
 #### **Comentarios de los resultados:**
 
