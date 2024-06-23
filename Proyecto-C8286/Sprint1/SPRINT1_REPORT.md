@@ -194,3 +194,25 @@ Para ello, se realizó la búsqueda de valores nulos en la data, la descripción
 - Davies-Bouldin Index: 0.729 → Los clústeres están más dispersos y menos definidos.
 
   ![](imagenes/metricaagglomerativekm.png)
+
+
+### **Análisis y evaluación**
+
+### **Comparación con los objetivos del Sprint**
+
+- **Objetivos alcanzados:** Se implementaron y evaluaron modelos y se documentaron los resultados. Además, estan listos para ser usados los datos.
+- **Objetivos no alcanzados:** Todos los objetivos planificados fueron alcanzados.
+
+### **Plan para el próximo Sprint**
+
+#### **Objetivos del próximo Sprint**
+
+- Implementar técnicas de paralelismo y distribución para los algoritmos de machine learning desarrollados.
+- Utilizar Dask y PySpark para manejar grandes volúmenes de datos y mejorar la escalabilidad de los algoritmos.
+
+#### **Tareas planificadas**
+
+- Configuración de Dask y PySpark
+- Implementación de paralelismo con Dask
+- Implementación de paralelismo con PySpark
+- Evaluación de la eficiencia
