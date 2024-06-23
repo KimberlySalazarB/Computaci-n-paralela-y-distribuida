@@ -26,15 +26,12 @@ Este documento proporciona instrucciones detalladas para configurar el entorno n
 
 3. **Instalar Dependencias**:
      ```
-    
      pip install scikit-learn
      pip install torch
      pip install torchvision
      pip install pandas
      pip install numpy
      pip install matplotlib
-     
-
      ```
 
 ### Configuración de Dask
