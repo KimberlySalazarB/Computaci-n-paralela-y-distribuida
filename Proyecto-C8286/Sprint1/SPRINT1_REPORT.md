@@ -94,22 +94,28 @@ Para ello, se utilizó los siguientes algoritmos:
 
 - **Implementación:** Usando Scikit-learn y el algoritmo de RandomForestClassifier
 - **Resultados y Evaluación:** Accuracy: 73.3%, Precisión: 70.7%
-
+![](imagenes/metricaemsamrf.png)
 #### **Gradient Boosting**
 
 - **Implementación:** Usando Scikit-learn y el algoritmo de GradientBoostingClassifier
-- **Resultados y Evaluación:** Accuracy: 76.6%, Precisión: 74.3%
+- **Resultados y Evaluación:** Accuracy: 76.6%, Precisión: 74.3
+  
+![](imagenes/metricaemsamgb.png)
 
 #### **XGBoost**
 
 - **Implementación:** Usando librería de XGBoost
 - **Resultados y Evaluación:** Accuracy: 75.32%, Precisión: 73.04%
+  
+![](imagenes/metricaemsamxg.png)
 
 **VotingClassifier:** Para combinar múltiples modelos para mejorar la precisión y la robustez de las predicciones (https://inteligencia-artificial.dev/ensemble-learning-python/).
 
 - **Implementación:** Usando Scikit-learn y VotingClassifier.
 - **Resultados y Evaluación:** Accuracy: 74.67 %, Precisión: 72.32%
   
+![](imagenes/metricaemsam.png)  
+
 ### 2. **Desarrollo de Algoritmo de Visión Computacional**
 
 Para el desarrollo de este algoritmo se seleccionó la data de gatos y perros con un total de 25000 imágenes. Además, se entrenó una red neuronal convolucional(CNN). Para ello, se tomó referencia de la pagina web de PyTorch (https://pytorch.org/tutorials/beginner/blitz/cifar10\_tutorial.html)
