@@ -94,7 +94,9 @@ Para ello, se utilizó los siguientes algoritmos:
 
 - **Implementación:** Usando Scikit-learn y el algoritmo de RandomForestClassifier
 - **Resultados y Evaluación:** Accuracy: 73.3%, Precisión: 70.7%
+  
 ![](imagenes/metricaemsamrf.png)
+
 #### **Gradient Boosting**
 
 - **Implementación:** Usando Scikit-learn y el algoritmo de GradientBoostingClassifier
@@ -149,6 +151,8 @@ Por último, se guarda el modelo y se obtienen las predicciones de las imágenes
 - Precisión para la clase: cat es 82.8 %
 - Precisión para la clase: dog es 60.6 %
   
+![](imagenes/Predicción_de_CNN.png)
+
 ### 3. **Desarrollo de Algoritmos de Clustering**
 
 Para el desarrollo de los algoritmos se utilizó Datos nutricionales del menú de Burger King. Donde se seleccionaron las columnas de Grasas totales y total de carbohidratos.
@@ -164,6 +168,8 @@ Para ello, se realizó la búsqueda de valores nulos en la data, la descripción
 - **Resultados y Evaluación:**
 - Silhouette Score: 0.529 → Es un valor cercano a 1 lo que indica que el punto de datos está bien dentro de su propio clúster y lejos de otros clústeres.
 - Davies-Bouldin Index: 0.68 → Es menos que 1 indica una mejor partición.
+  
+  ![](imagenes/metricakmean.png)
 
 #### **DBSCAN**
 
@@ -175,6 +181,8 @@ Para ello, se realizó la búsqueda de valores nulos en la data, la descripción
 - Silhouette Score: 0.46 → Es un valor cercano a 1 lo que indica que el punto de datos está bien dentro de su propio clúster y lejos de otros clústeres.
 - Davies-Bouldin Index: 1.18 → Los clústeres están más dispersos y menos definidos
 
+  ![](imagenes/metricadbscan.png)
+
 #### **Agglomerative Clustering**
 
 - **Implementación:** Usando Scikit-learn: from sklearn.cluster import AgglomerativeClustering, importamos la librería de matplotlib.pyplot as plt ( para ver la gráfica de los clusters) .
@@ -185,4 +193,4 @@ Para ello, se realizó la búsqueda de valores nulos en la data, la descripción
 - Silhouette Score: 0.501 → Es un valor cercano a 1 lo que indica que el punto de datos está bien dentro de su propio clúster y lejos de otros clústeres.
 - Davies-Bouldin Index: 0.729 → Los clústeres están más dispersos y menos definidos.
 
-
+  ![](imagenes/metricaagglomerativekm.png)
