@@ -37,5 +37,5 @@
 - **PySpark:** Utilizar PySpark para distribuir las tareas de procesamiento y entrenamiento de modelos en un clúster, mejorando la escalabilidad y el rendimiento.
   
 **Optimización y evaluación de algoritmos:**
-- Grid search y random search: Implementar técnicas de búsqueda de hiperparámetros en un entorno distribuido para optimizar los modelos de machine learning.
-- Monitoreo y tuning: Utilizar herramientas de monitoreo para supervisar el rendimiento de los algoritmos y realizar ajustes proactivos para mejorar la eficiencia.
+- **Grid search y random search:** Implementar técnicas de búsqueda de hiperparámetros en un entorno distribuido para optimizar los modelos de machine learning.
+- **Monitoreo y tuning:** Utilizar herramientas de monitoreo para supervisar el rendimiento de los algoritmos y realizar ajustes proactivos para mejorar la eficiencia.
