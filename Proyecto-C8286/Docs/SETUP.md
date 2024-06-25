@@ -25,9 +25,13 @@ Este documento proporciona instrucciones detalladas para configurar el entorno n
    ```
 
 3. **Instalar Dependencias**:
-   - Navega al directorio del proyecto y ejecuta:
      ```
-     pip install -r requirements.txt
+     pip install scikit-learn
+     pip install torch
+     pip install torchvision
+     pip install pandas
+     pip install numpy
+     pip install matplotlib
      ```
 
 ### Configuración de Dask
