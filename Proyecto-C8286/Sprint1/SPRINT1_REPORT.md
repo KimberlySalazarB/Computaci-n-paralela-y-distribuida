@@ -90,11 +90,40 @@ Se utilizó un conjunto de datos sobre la diabetes donde se predice si tiene dia
 
 Para ello, se utilizó los siguientes algoritmos:
 
-#### **Random Forest**
+#### **Random Forest:** 
+Este algoritmo se basa en la construcción de múltiples árboles de decisión para tareas de clasificación con el uso del voto mayoritario (para clasificación) de los árboles individuales para hacer predicciones. Además, este algoritmo se destaca por manejo de datos complejos y proporcionando predicciones sólidas.
 
 - **Implementación:** Usando Scikit-learn y el algoritmo de RandomForestClassifier
-- **Resultados y Evaluación:** Accuracy: 73.3%, Precisión: 70.7%
-  
+- **Parametros:** Se utilizaron los parametros de:
+  - n_estimators=100: Número de árboles en el bosque.
+  - random_state=42 : Se utiliza comunmente para obtener simpre la misma salida o resultado.
+- **Resultados y Evaluación:**
+  - Accuracy: Es la proporción de predicciones que el modelo clasificó correctamente.
+    ```
+   Accuracy = (número de predicciones correctas)/(total de número de predicciones)
+   Que se halla de la siguiente manera:
+   Accuracy =(TP + TN)/(TP+TN + FP + FN)
+   Verdadero Positivo (TP): Resultado en el que el modelo predice correctamente la clase de que no tiene diabetes.
+  Verdadero Negativo (TN): Resultado donde el modelo predice correctamente la clase de que si tiene diabetes.
+    Falso Positivo (FP): Resultado donde el modelo predice incorrectamente la clase de que no tiene diabetes cuando en realidad si lo tiene.
+  Falso Negativo (FN): Resultado en el que el modelo predice incorrectamente la clase si tiene diabetes cuando en realidad no tiene diabetes.
+    ```
+    En este entrenamiento se obtuvo el 73.37%.
+    Para ello, calculamos las predicciones correctas y la dividimos entre el total de predicciones
+    Accuracy= 113/156=0.7337
+    
+  - Precisión: 
+    Para hallar la precisión que es la proporción de identificaciones positivas fue realmente correcta.
+    Se halla con la siguiente formula:
+    ```
+    Presición= TP /(TP + FP)
+    ```
+    En este entrenamiento se obtuvo el 70.7%
+    Para ello calculamos el número la predicciones de la clase que no tine diabetes y el número de predicciones incorrecta que clasificaron la clase que no tien diabetes cuando realmente tiene.
+    Presición 1 (no tiene diabetes)  = 29 /29 + 16 =0.644
+    Presición 2 (si tiene diabetes)  = 84 /84 + 25 =0.77
+    Para halla la presicción total es= (Presición 1+Presición 2)/2=0.707
+    
 ![](imagenes/metricaemsamrf.png)
 
 #### **Gradient Boosting**
