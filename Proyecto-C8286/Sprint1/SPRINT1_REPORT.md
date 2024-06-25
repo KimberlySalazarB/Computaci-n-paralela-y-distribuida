@@ -100,13 +100,14 @@ Este algoritmo se basa en la construcción de múltiples árboles de decisión p
 - **Resultados y Evaluación:**
   - Accuracy: Es la proporción de predicciones que el modelo clasificó correctamente.
     ```
-   Accuracy = (número de predicciones correctas)/(total de número de predicciones)
+    Accuracy = (número de predicciones correctas)/(total de número de predicciones)
    Que se halla de la siguiente manera:
    Accuracy =(TP + TN)/(TP+TN + FP + FN)
    Verdadero Positivo (TP): Resultado en el que el modelo predice correctamente la clase de que no tiene diabetes.
   Verdadero Negativo (TN): Resultado donde el modelo predice correctamente la clase de que si tiene diabetes.
     Falso Positivo (FP): Resultado donde el modelo predice incorrectamente la clase de que no tiene diabetes cuando en realidad si lo tiene.
   Falso Negativo (FN): Resultado en el que el modelo predice incorrectamente la clase si tiene diabetes cuando en realidad no tiene diabetes.
+  
     ```
     En este entrenamiento se obtuvo el 73.37%.
     Para ello, calculamos las predicciones correctas y la dividimos entre el total de predicciones
