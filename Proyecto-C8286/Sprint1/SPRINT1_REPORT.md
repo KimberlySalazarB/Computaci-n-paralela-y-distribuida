@@ -110,7 +110,9 @@ Este algoritmo se basa en la construcción de múltiples árboles de decisión p
   
     ```
     En este entrenamiento se obtuvo el 73.37%.
+    
     Para ello, calculamos las predicciones correctas y la dividimos entre el total de predicciones
+    
     Accuracy= 113/156=0.7337
     
   - Precisión: 
@@ -120,9 +122,13 @@ Este algoritmo se basa en la construcción de múltiples árboles de decisión p
     Presición= TP /(TP + FP)
     ```
     En este entrenamiento se obtuvo el 70.7%
+    
     Para ello calculamos el número la predicciones de la clase que no tine diabetes y el número de predicciones incorrecta que clasificaron la clase que no tien diabetes cuando realmente tiene.
+    
     Presición 1 (no tiene diabetes)  = 29 /29 + 16 =0.644
+    
     Presición 2 (si tiene diabetes)  = 84 /84 + 25 =0.77
+    
     Para halla la presicción total es= (Presición 1+Presición 2)/2=0.707
     
 ![](imagenes/metricaemsamrf.png)
