@@ -98,7 +98,7 @@ Este algoritmo se basa en la construcción de múltiples árboles de decisión p
   - n_estimators=100: Número de árboles en el bosque.
   - random_state=42 : Se utiliza comunmente para obtener simpre la misma salida o resultado.
 - **Resultados y Evaluación:**
-  - Accuracy: Es la proporción de predicciones que el modelo clasificó correctamente.
+  - **Accuracy**: Es la proporción de predicciones que el modelo clasificó correctamente.
     ```
     Accuracy = (número de predicciones correctas)/(total de número de predicciones)
     Que se halla de la siguiente manera:
@@ -115,7 +115,7 @@ Este algoritmo se basa en la construcción de múltiples árboles de decisión p
     
     Accuracy= 113/156=0.7337
     
-  - Precisión: 
+  - **Precisión:** 
     Para hallar la precisión que es la proporción de identificaciones positivas fue realmente correcta.
     Se halla con la siguiente formula:
     ```
@@ -136,7 +136,15 @@ Este algoritmo se basa en la construcción de múltiples árboles de decisión p
 #### **Gradient Boosting**
 
 - **Implementación:** Usando Scikit-learn y el algoritmo de GradientBoostingClassifier
-- **Resultados y Evaluación:** Accuracy: 76.6%, Precisión: 74.3
+- **Resultados y Evaluación:** Como explicado en el anterior algoritmo: lo mismo aplicamos en este algoritmos para calcular estas metricas
+  - **Accuracy:**
+   En este entrenamiento se obtuvo el 76.6%.
+  
+   Para ello, calculamos las predicciones correctas y la dividimos entre el total de predicciones
+    
+    Accuracy= 118/156=0.766
+  
+   - **Precisión:** 74.3 %
   
 ![](imagenes/metricaemsamgb.png)
 
