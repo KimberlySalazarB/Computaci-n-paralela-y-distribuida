@@ -205,9 +205,10 @@ Para ello, se realizó la búsqueda de valores nulos en la data, la descripción
 
 #### **K-means:** En este algoritmo se asignó dos clusters y se seleccionaron los centroides iniciales de forma aleatoria.
 
-- **Implementación:** Usando Scikit-learn : from sklearn.cluster import KMeans, importamos la librería de matplotlib.pyplot as plt ( para ver la gráfica de los clusters) . Para evaluar la calidad de los clusters se utilizaron las siguientes métricas: **Silhouette Score:** Sirve para evaluar la cohesión y la separación de los clusters en un conjunto de datos
+- **Implementación:** Usando Scikit-learn : from sklearn.cluster import KMeans, importamos la librería de matplotlib.pyplot as plt ( para ver la gráfica de los clusters) . Para evaluar la calidad de los clusters se utilizaron las siguientes métricas:
+- **Silhouette Score:** Sirve para evaluar la cohesión y la separación de los clusters en un conjunto de datos
 
-  **Davies-Bouldin Index:**comparar la dispersión dentro de cada clúster con la distancia entre los centroides de los clústeres.
+- **Davies-Bouldin Index:** Comparar la dispersión dentro de cada clúster con la distancia entre los centroides de los clústeres.
 
 - **Resultados y Evaluación:**
 - Silhouette Score: 0.529 → Es un valor cercano a 1 lo que indica que el punto de datos está bien dentro de su propio clúster y lejos de otros clústeres.
