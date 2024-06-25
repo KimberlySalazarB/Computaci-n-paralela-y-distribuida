@@ -1,0 +1,80 @@
+Ejercicio 1: Arquitectura y funcionamiento de HDFS
+Arquitectura de HDFS:
+
+Hadoop Distributed File System (HDFS) es el sistema de archivos distribuido diseñado para almacenar grandes volúmenes de datos en un clúster de servidores. Su arquitectura se compone de varios componentes clave:
+
+Namenode:
+
+Responsabilidades: Gestiona el espacio de nombres del sistema de archivos, mapea bloques de datos a datanodes, y coordina el acceso de clientes a archivos.
+Metadatos: Mantiene metadatos como la estructura del sistema de archivos, la ubicación de bloques de datos y permisos de acceso.
+Persistencia: Los metadatos se almacenan persistentemente en el disco local del Namenode.
+Datanode:
+
+Responsabilidades: Almacena datos en bloques en el sistema de archivos local del nodo y sirve estos bloques a los clientes y al Namenode.
+Bloques de datos: Cada datanode contiene múltiples bloques de datos y se comunica regularmente con el Namenode para informar sobre su estado y disponibilidad.
+Secondary Namenode:
+
+Responsabilidades: Ayuda al Namenode realizando checkpoints regulares de los metadatos para evitar la pérdida de datos en caso de fallo del Namenode.
+Checkpoint: Fusiona el sistema de archivos editado (edits log) con la imagen actual del sistema de archivos, reduciendo el tiempo de recuperación después de un fallo.
+Tolerancia a fallos y replicación de datos en HDFS:
+
+Tolerancia a fallos: HDFS asegura la tolerancia a fallos a través de la replicación de datos. Si un datanode falla, los bloques de datos que estaban almacenados en ese datanode se replican en otros datanodes dentro del clúster. El Namenode gestiona automáticamente la replicación de bloques.
+
+Recuperabilidad de datos: Cuando un datanode falla, el Namenode detecta la falta de corazón (heartbeats) y los bloques replicados se utilizan para mantener la disponibilidad y consistencia de los datos. Los bloques de datos perdidos debido a fallos se replican nuevamente en otros datanodes disponibles.
+
+Ejercicio 2: Escalabilidad y rendimiento en HDFS
+Desafíos de escalabilidad:
+
+Adición de nuevos nodos: HDFS maneja la adición de nuevos nodos de manera eficiente mediante la redistribución de datos. Al añadir nuevos datanodes al clúster, el Namenode equilibra la carga redistribuyendo bloques de datos para mantener un uso equitativo del almacenamiento y mejorar el rendimiento.
+
+Limitaciones del Namenode: El principal desafío de escalabilidad en HDFS radica en el Namenode, que almacena todos los metadatos del sistema de archivos en memoria. Las limitaciones de memoria y rendimiento del Namenode pueden surgir cuando el número de archivos y bloques aumenta significativamente.
+
+Soluciones propuestas:
+
+Federación del Namenode: Implementar una configuración de Namenode en modo federado permite tener múltiples Namenodes en un clúster, cada uno manejando un subconjunto de directorios. Esto distribuye la carga de trabajo entre varios Namenodes.
+
+Namenode de alta disponibilidad (HA): Configurar Namenode en modo HA utilizando ZooKeeper para la gestión del estado del clúster. Esto asegura la disponibilidad continua del sistema de archivos incluso si un Namenode falla.
+
+Ejercicio 3: Integración de HDFS con MapReduce
+Integración con MapReduce:
+
+Optimización de la localización de datos: MapReduce optimiza el rendimiento al procesar datos donde están almacenados. HDFS localiza los datos físicamente cerca de los nodos de procesamiento MapReduce (task trackers) para minimizar el movimiento de datos a través de la red, aprovechando la localidad de los datos.
+Flujo de trabajo de MapReduce:
+
+Lectura de datos: Los datos se leen desde HDFS, divididos en bloques y asignados a los nodos de procesamiento MapReduce.
+
+Procesamiento Map: Los nodos de procesamiento Map ejecutan operaciones de mapeo en paralelo, procesando cada bloque de datos localmente.
+
+Shuffle y Sort: Los resultados intermedios se ordenan y redistribuyen entre los nodos de reducción, aprovechando la localidad de datos para minimizar la transferencia de red.
+
+Procesamiento Reduce: Los nodos de reducción procesan y combinan los resultados intermedios para producir el resultado final.
+
+Escritura de resultados: El resultado final se escribe de vuelta en HDFS.
+
+Ejercicio 4: Consistencia y coherencia en HDFS
+Consistencia de los datos:
+
+HDFS asegura la consistencia de los datos mediante estrategias de replicación y control de versiones de metadatos.
+
+Mecanismos de consistencia:
+
+Replicación de bloques: Cada bloque de datos se replica en múltiples datanodes para garantizar disponibilidad y durabilidad.
+Edits log y Checkpoints: El Namenode utiliza un registro de cambios (edits log) para registrar las operaciones de escritura antes de realizar un checkpoint. Esto asegura que las operaciones de escritura sean consistentes y duraderas.
+Escrituras concurrentes y condiciones de carrera:
+
+HDFS maneja las escrituras concurrentes utilizando bloqueos y versionamiento de metadatos. El Namenode coordina el acceso a los metadatos y garantiza que las operaciones de escritura sean atómicas y secuenciales.
+
+Versionamiento de metadatos: Los cambios en los metadatos se registran en un registro de cambios (edits log) antes de realizar un checkpoint. Esto permite la recuperación y la consistencia tras fallos.
+
+Ejercicio 5: Casos de uso de HDFS
+Aplicaciones que se benefician de HDFS:
+
+Análisis de Big Data: HDFS es ideal para almacenar y procesar grandes volúmenes de datos generados por aplicaciones de análisis de big data como Apache Hive y Apache Spark.
+
+Almacenamiento de datos de registros (logs): HDFS es utilizado para almacenar registros masivos de aplicaciones, sistemas y dispositivos, facilitando la búsqueda, el análisis y la generación de informes.
+
+Integración con otros componentes del ecosistema Hadoop:
+
+Apache Hive: Utiliza HDFS como su almacenamiento primario para datos estructurados, permitiendo consultas SQL ad-hoc sobre grandes conjuntos de datos.
+
+Apache Spark: Accede a los datos almacenados en HDFS para procesamiento en memoria y análisis distribuido, aprovechando la localidad de los datos para optimizar el rendimiento.
