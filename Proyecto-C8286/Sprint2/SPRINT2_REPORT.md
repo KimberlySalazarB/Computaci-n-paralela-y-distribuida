@@ -16,6 +16,10 @@ Dask también permite la programación distribuida ejecutando tareas en un clús
 
 *Tanto NumPy, pandas y Scikit-learn estan limitadas ejecutar sus cálculos en un solo núcleo, pero Dask soluciona eso, ya que realiza los calculos en paralelo utilizando multiples núcleos y también distribuidos en multiples máquinas lo que hacen que estas bibliotecas sean más rapidas y escalables.*
 
+### **PySpark**
+PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento de datos a gran escala en tiempo real en un entorno distribuido utilizando Python. Su objetivo es hacer que el aprendizaje automático práctico sea escalable y sencillo. 
+
+
 ## 2. **Planificación**
 
 ### **Tareas planificadas**
