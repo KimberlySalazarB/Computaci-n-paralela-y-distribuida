@@ -19,7 +19,7 @@ Después de haber esquematizado los algoritmos de machine learning que se realiz
 
 *En ambos problemas podría beneficiarse del uso del paralelismo.*
 
-[Google]: <https://ml.dask.org/> (Más información Dask)
+[Más información Dask](https://ml.dask.org/) 
 
 ### **Dask**
 Dask es una biblioteca de Python que facilita la programación paralela y distribuida. Te permite paralelizar el código de manera eficiente, y es especialmente útil para el procesamiento de grandes conjuntos de datos y cálculos complejos. Además, su integración con NumPy, pandas y Scikit-learn lo hacen especialmente útil para la ciencia de datos y el análisis de datos a gran escala.
