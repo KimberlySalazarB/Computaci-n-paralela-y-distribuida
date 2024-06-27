@@ -17,7 +17,7 @@ Después de haber esquematizado los algoritmos de machine learning que se realiz
 
 **PROBLEMA 2:** El segundo problema es un problema vinculado a la CPU, los datos caben en la RAM, pero tu entrenamiento o tu optimización de hiperparámetros está tardando demasiado (que se muestra a lo largo del eje horizontal de arriba).
 
-*En ambos casos podría beneficiarse del uso del paralelismo.*
+*En ambos problemas podría beneficiarse del uso del paralelismo.*
 
 ### **Dask**
 Dask es una biblioteca de Python que facilita la programación paralela y distribuida. Te permite paralelizar el código de manera eficiente, y es especialmente útil para el procesamiento de grandes conjuntos de datos y cálculos complejos. Además, su integración con NumPy, pandas y Scikit-learn lo hacen especialmente útil para la ciencia de datos y el análisis de datos a gran escala.
