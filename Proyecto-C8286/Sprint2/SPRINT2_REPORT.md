@@ -33,7 +33,7 @@ Dask también permite la programación distribuida ejecutando tareas en un clús
 ### **PySpark**
 PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento de datos a gran escala en tiempo real en un entorno distribuido utilizando Python. Su objetivo es hacer que el aprendizaje automático práctico sea escalable y sencillo. 
 
-
+ref=[https://ml.dask.org/]
 ## 2. **Planificación**
 
 ### **Tareas planificadas**
