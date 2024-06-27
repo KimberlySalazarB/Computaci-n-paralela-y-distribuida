@@ -2,10 +2,8 @@
 
 ## 1. **Introducción**
 
-### **Objetivos del Sprint**
+Después de haber esquematizado los algoritmos de machine learning que se realizó en el anterior sprint, lo que se plantea en este Sprint aplicar técnicas de  paralelismo y distribución a dichos algoritmos con el objetivo de manejar grandes volúmenes de datos y mejorar la escalabilidad de los algoritmos. Para ello, se hará uso de Dask y PySpark.
 
-- Implementar técnicas de paralelismo y distribución para los algoritmos de machine learning desarrollados.
-- Utilizar Dask y PySpark para manejar grandes volúmenes de datos y mejorar la escalabilidad de los algoritmos.
 ## 2. **Planificación**
 
 ### **Tareas planificadas**
