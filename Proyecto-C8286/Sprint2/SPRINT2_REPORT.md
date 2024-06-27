@@ -19,6 +19,8 @@ Después de haber esquematizado los algoritmos de machine learning que se realiz
 
 *En ambos problemas podría beneficiarse del uso del paralelismo.*
 
+[id]: <https://ml.dask.org/>  "Más información Dask"
+
 ### **Dask**
 Dask es una biblioteca de Python que facilita la programación paralela y distribuida. Te permite paralelizar el código de manera eficiente, y es especialmente útil para el procesamiento de grandes conjuntos de datos y cálculos complejos. Además, su integración con NumPy, pandas y Scikit-learn lo hacen especialmente útil para la ciencia de datos y el análisis de datos a gran escala.
 
@@ -33,7 +35,7 @@ Dask también permite la programación distribuida ejecutando tareas en un clús
 ### **PySpark**
 PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento de datos a gran escala en tiempo real en un entorno distribuido utilizando Python. Su objetivo es hacer que el aprendizaje automático práctico sea escalable y sencillo. 
 
-ref=[https://ml.dask.org/]
+
 ## 2. **Planificación**
 
 ### **Tareas planificadas**
