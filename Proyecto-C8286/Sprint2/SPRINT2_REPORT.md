@@ -9,7 +9,7 @@ Después de haber esquematizado los algoritmos de machine learning que se realiz
 
 **Desafíos de escalar al realizar Machine Learning**
 
-![](imagenes/)
+![](imagenes/Captura de pantalla 2024-06-27 000141.png)
 
 *En el eje **x** tenemos el tamaño de los datos y en el eje **y** tenemos tiempo de cálculo o complejidad del modelo.*
 
