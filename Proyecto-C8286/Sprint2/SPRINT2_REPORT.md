@@ -14,6 +14,7 @@ Dask es una biblioteca de Python que facilita la programación paralela y distri
 **Uso de Dask en Programación Distribuida:**
 Dask también permite la programación distribuida ejecutando tareas en un clúster de múltiples máquinas. Para ello, se hace uso de cluster en ves de usar una máquina local.
 
+*Tanto NumPy, pandas y Scikit-learn estan limitadas ejecutar sus cálculos en un solo núcleo, pero Dask soluciona eso, ya que realiza los calculos en paralelo utilizando multiples núcleos y también distribuidos en multiples máquinas lo que hacen que estas bibliotecas sean más rapidas y escalables.*
 
 ## 2. **Planificación**
 
