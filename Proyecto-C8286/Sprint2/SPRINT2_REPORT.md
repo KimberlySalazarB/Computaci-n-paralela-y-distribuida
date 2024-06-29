@@ -110,8 +110,8 @@ En *dask_ml.cluster.KMeans* se inicializa predeterminadamente con el parametro d
 
 Como se ve a continuación:
 
-![](imagenes/)
-![](imagenes/)
+![](imagenes/skele.png)
+![](imagenes/daskml.png)
 
 *k-means||* y *k-means++* son inicializadores que permiten seleccionar los centros del cluster hasta llegar a converger es decir repetir la asignación de puntos a los clusteres según al centro más cercano a través de la de la distancia euclidiana y a la actualización de los centros de los clusteres hasta que los centros ya no cambien significativamente entre las interacciones.
 
