@@ -172,11 +172,11 @@ Los resultados muestran que la ejecución de la división de los datos es ligera
 
 **Con scikit-learn**
 
-![](imagenes/skile.png)
+![](imagenes/skiler.png)
 
 **Con Dask -> Distribuido**
 
-![](imagenes/distribuido.png)
+![](imagenes/daskdis.png)
 
 - **PySpark:**
 - **Algoritmo:** Algoritmo de clustering (K-means).
