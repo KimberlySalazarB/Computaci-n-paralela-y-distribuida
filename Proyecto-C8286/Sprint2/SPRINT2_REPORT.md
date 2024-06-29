@@ -150,11 +150,11 @@ En comparación al resultado del sprint 1 de la ejecución con scikit-learn y lo
 
 **Con scikit-learn**
 
-![](imagenes/)
+![](imagenes/skile.png)
 
 **Con Dask -> Distribuido**
 
-![](imagenes/)
+![](imagenes/distribuido.png)
 
 - **Algoritmo:** Algoritmo de visión computacional (CNN).
 - Diagrama de pasos:
