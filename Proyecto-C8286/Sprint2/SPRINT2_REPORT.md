@@ -97,6 +97,8 @@ Figura1:*Dask array implementación paralela de Numpy*
 
 Estos fragmentos de matrices que se obtine a través de Dask array permite escalar cuando el conjunto de datos crece. En lo que para Numpy es difícil cargar estos datos porque solo trabaja en un solo núcleo, mientras con Dask array permite utilizar todos los núcleos locales que se tiene en una maquina local permitiendo acelerar significativamente el tiempo de procesamiento.
 
+![](imagenes/array.png)
+
 Además, se utilizo la librería de **dask_ml.cluster** importando la biblioteca KMeans. Dask-ML permite que un algoritmo de aprendizaje automático se escalable. Ya que, al encontrase con desafíos al momento de escalar un modelo y que este se vuelve grande o complejo va afectar el flujo de trabajo presentado demoras al instante que se desea hacer el entrenamiento, predicción o evaluación.
 
 Existe diferentes maneras de paralelizar unas de las formas es utilizando el backend de Joblib de Dask para paralelizar Scikit-Learn directamente o utilizando algunos estimadores dask-ml  como **dask_ml.cluster.KMeans**.
@@ -136,7 +138,7 @@ Esta línea nos indica que trabajarenos con 4 trabajadores y cada trabajador ten
 
 Después, de ello se hizo uso de *dask.dataframe* que permite procesar conjuntos de datos tabulares paralelizando pandas. Dask dataframes cordina una colección de muchos dataframes de pandas que pueden estar en el disco o en otras máquinas, como se observa en la siguiente imagen:
 
-![](imagenes/)
+![](imagenes/pandas.png)
 
 Por otra parte, se utilizó *dask_ml.model_selection* para dividir tanto los datos de entrenamiento y prueba. Para entrenar el modelo de XGBoost, utilice *dask-xgboost* que permite realizar el entrenamiento en utilizando los 4 trabajadores en paralelo sobre el conjunto de datos distribuidos en un clúster. La siguiente línea de codigo:
 ```
