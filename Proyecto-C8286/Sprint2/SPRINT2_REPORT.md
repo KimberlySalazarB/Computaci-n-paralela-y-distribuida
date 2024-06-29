@@ -136,7 +136,7 @@ client = Client(n_workers=4, threads_per_worker=2)
 ```
 Esta línea nos indica que trabajarenos con 4 trabajadores y cada trabajador tendra 2 hilos esto quiere decir que cada trabajador puede manejar hasta 2 tareas simultáneamente(paralelo) dentro de su propio proceso. Asimismo, cada trabajador va ser un proceso independiente que puede ejecutar tareas de Dask. 
 
-Después, de ello se hizo uso de *dask.dataframe* que permite procesar conjuntos de datos tabulares paralelizando pandas. Dask dataframes cordina una colección de muchos dataframes de pandas que pueden estar en el disco o en otras máquinas, como se observa en la siguiente imagen:
+Después, de ello se hizo uso de *dask.dataframe* que permite procesar conjuntos de datos tabulares paralelizando pandas [Más información de dask.dataframe](https://docs.dask.org/en/latest/dataframe.html) . Dask dataframes cordina una colección de muchos dataframes de pandas que pueden estar en el disco o en otras máquinas, como se observa en la siguiente imagen:
 
 ![](imagenes/pandas.png)
 
