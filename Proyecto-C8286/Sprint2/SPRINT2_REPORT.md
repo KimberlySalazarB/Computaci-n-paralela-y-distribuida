@@ -86,7 +86,7 @@ PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento
 
 
 
-#####**Aplicación de paralelización con dask**
+##### **Aplicación de paralelización con dask**
 
 Se aplicó paralelización para el manejo de los datos a través de 
 **X_std_dask = da.from_array(X_std,chunks=(1000,2))** que permite convertir a Dask array.
