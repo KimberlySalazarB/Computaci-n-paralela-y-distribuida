@@ -106,8 +106,14 @@ En este caso se utilizó el estimador *dask_ml.cluster.KMeans* que nos va a perm
 #K-means con Dask-ML
 kmeans = KMeans(n_clusters=5,init='k-means||',max_iter=300,n_init=10,random_state=0)
 ```
-En *dask_ml.cluster.KMeans* se inicializa predeterminadamente con el parametro de *k-means||* em comparación de scikit-learn que es *k-means++*. El parametro *k-means||* esta diseñado para un estorno distribuido y es una variante de *k-means++* que esta diseñada para funcionar de forma paralela en cambio *k-means++* es secuencial. Pero en la aplicación de este parametro *k-means||* tiene una implicación cuando el conjunto de dato cabe en la memoria en una sola máquina este puede ser más lenta que la de scikit-learn *k-means++*.
+En *dask_ml.cluster.KMeans* se inicializa predeterminadamente con el parametro de *k-means||* em comparación de scikit-learn que es *k-means++*. El parametro *k-means||* es una variante de *k-means++* que esta diseñada para funcionar de forma paralela que funciona bien para un entorno distribuido, en cambio *k-means++* es secuencial. Pero en la aplicación de este parametro *k-means||* tiene una implicación cuando el conjunto de dato cabe en la memoria en una sola máquina este puede ser más lenta que la de scikit-learn *k-means++*.
+
 Como se ve a continuación:
+
+![](imagenes/)
+![](imagenes/)
+
+*k-means||* y *k-means++* son inicializadores que permiten seleccionar los centros del cluster hasta llegar a converger es decir repetir la asignación de puntos a los clusteres según al centro más cercano a través de la de la distancia euclidiana y a la actualización de los centros de los clusteres hasta que los centros ya no cambien significativamente entre las interacciones.
 
 - **Algoritmo:** Algoritmo de ensamblado  (XGBoost).
 - Diagrama de pasos:
