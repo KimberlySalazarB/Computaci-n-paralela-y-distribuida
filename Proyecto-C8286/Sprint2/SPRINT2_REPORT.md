@@ -119,10 +119,10 @@ Como se ve a continuación:
 
 Los resultados anteriores se observa que la implementación sin paralelización es más rápida que la paralelización con Dask-ML esto se debe a que los datos caben en la memoria. Por lo cual, el resultado de la paralelización es más lenta en la Paralelización con Dask-ML.
 
-- *k-means||* y *k-means++* son inicializadores que permiten seleccionar los centros del cluster hasta llegar a converger es decir repetir la asignación de puntos a los clusteres según al centro más cercano a través de la de la distancia euclidiana y a la actualización de los centros de los clusteres hasta que los centros ya no cambien significativamente entre las interacciones.
+  - *k-means||* y *k-means++* son inicializadores que permiten seleccionar los centros del cluster hasta llegar a converger es decir repetir la asignación de puntos a los clusteres según al centro más cercano a través de la de la distancia euclidiana y a la actualización de los centros de los clusteres hasta que los centros ya no cambien significativamente entre las interacciones.
 
 
-- **Algoritmo:** Algoritmo de ensamblado  (XGBoost).
+ ###### **Algoritmo:** Algoritmo de ensamblado  (XGBoost).
 - Diagrama de pasos:
 
 ![](imagenes/Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.002.png)
