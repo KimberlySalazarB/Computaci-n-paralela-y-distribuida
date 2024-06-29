@@ -161,6 +161,23 @@ En comparación al resultado del sprint 1 de la ejecución con scikit-learn y lo
 
   ![](imagenes/Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.003.png)
 
+ En este algoritmo se aplucó paralelización y distribuida. Para la parte distribuida se configura un cliente Dask para manejar operaciones paralelas utilizando 4 trabajadores (procesos) cada uno con 2 hilos y con una limitación de memoria de cada trabajador a 2GB estos parámetros permiten optimizar el uso de recursos de la CPU y memoria. 
+ Asimismo, se convierte el Dataframe de Pandas a un Dataframe de Dask que permite manejar y procesar conjuntos de datos grandes que no caben en la memoria de una sola máquina. Además, que permite manipular los datos distribuidos a través de trabajadores.
+
+Por otra parte, se hizo uso de la librería de *dask_ml.model_selection import train_test_split*  para la división de datos. En esta parte, Dask-ML divide el Dataframe de Dask en paralelo aprovechando que el cliente Dask tiene múltiples trabajadores e hilos.
+
+Asimimo, en la siguiente línea de codigo se hace uso de **.compute** este método de Dask se encarga de ejecutar todas las tareas pendientes en paralelo y convierte el DataFrame en un Numpy array. para luego se usadas en la parte de la creación de conjuto de datos de entrenamiento y de prueba. Además, de pasar por una transformación de los datos que en este caso se está trabajando con imagenes.
+
+Los resultados muestran que la ejecución de la división de los datos es ligeramente más rápido en una programación no distribuida que la distribuida. Esto se debe a la cantidad de datos, ya que los datos caben en la memoría y es más rápido en una misma máquina.
+
+**Con scikit-learn**
+
+![](imagenes/skile.png)
+
+**Con Dask -> Distribuido**
+
+![](imagenes/distribuido.png)
+
 - **PySpark:**
 - **Algoritmo:** Algoritmo de clustering (K-means).
 - Diagrama de pasos:
