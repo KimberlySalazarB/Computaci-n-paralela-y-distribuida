@@ -86,6 +86,7 @@ PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento
 
 
 
+#####**Aplicación de paralelización con dask**
 
 Se aplicó paralelización para el manejo de los datos a través de 
 **X_std_dask = da.from_array(X_std,chunks=(1000,2))** que permite convertir a Dask array.
@@ -95,6 +96,19 @@ Dask array es una implementación paralela de Numpy que nos permite dividir en m
 
 Figura1:*Dask array implementación paralela de Numpy*
 
+Estos fragmentos de matrices que se obtine a través de Dask array permite escalar cuando el conjunto de datos crece. En lo que para Numpy es difícil cargar estos datos porque solo trabaja en un solo núcleo, mientras con Dask array permite utilizar todos los núcleos locales que se tiene en una maquina local.
+
+Además, se utilizo la librería de **dask_ml.cluster** importando la biblioteca KMeans. Dask-ML permite que un algoritmo de aprendizaje automático se escalable. Ya que, al encontrase con desafíos al momento de escalar un modelo y que este se vuelve grande o complejo va afectar el flujo de trabajo presentado demoras al instante que se desea hacer el entrenamiento, predicción o evaluación.
+
+Existe diferentes maneras de paralelizar unas de las formas es utilizando el backend de Joblib de Dask para paralelizar Scikit-Learn directamente o utilizando algunos estimadores dask-ml  como **dask_ml.cluster.KMeans**.
+
+En este caso se utilizó el estimador **dask_ml.cluster.KMeans* que nos va a permitir paralelizar al momento de realizar el entrenamiento del algoritmo de K-means. En el codigo tenemos la siguiente línea:
+```
+#K-means con Dask-ML
+kmeans = KMeans(n_clusters=5,init='k-means||',max_iter=300,n_init=10,random_state=0)
+```
+En **dask_ml.cluster.KMeans* se inicializa predeterminadamente con el parametro de *k-means||* em comparación de scikit-learn que es *k-means++*. El parametro *k-means||* esta diseñado para un estorno distribuido y es una variante de *k-means++* que esta diseñada para funcionar de forma paralela en cambio *k-means++* es secuencial. Pero en la aplicación de este parametro *k-means||* tiene una implicación cuando el conjunto de dato cabe en la memoria en una sola máquina este puede ser más lenta que la de scikit-learn *k-means++*.
+Como se ve a continuación:
 
 - **Algoritmo:** Algoritmo de ensamblado  (XGBoost).
 - Diagrama de pasos:
