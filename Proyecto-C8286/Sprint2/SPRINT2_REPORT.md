@@ -28,8 +28,7 @@ Dask es una biblioteca de Python que facilita la programación paralela y distri
 **Uso de Dask en Programación Paralela:** Dask permite la ejecución en paralelo dividiendo las tareas en bloques y ejecutándolas simultáneamente en múltiples núcleos del mismo equipo. 
 
 **Uso de Dask en Programación Distribuida:**
-Dask también permite la programación distribuida ejecutando tareas en un clúster de múltiples máquinas. Para ello, se hace uso de cluster en ves de usar una máquina local.
-
+Dask también permite la programación distribuida ejecutando tareas en un clúster de múltiples máquinas o procesos. 
 
 ### **PySpark**
 PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento de datos a gran escala en tiempo real en un entorno distribuido utilizando Python. Su objetivo es hacer que el aprendizaje automático práctico sea escalable y sencillo. 
