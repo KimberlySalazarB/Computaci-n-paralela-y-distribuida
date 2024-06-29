@@ -89,13 +89,13 @@ PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento
 
 Se aplicó paralelización para el manejo de los datos a través de 
 **X_std_dask = da.from_array(X_std,chunks=(1000,2))** que permite convertir a Dask array.
-Dask array es una implementación paralela de Numpy que nos permite dividir en muchas matrices más pequeñas en los datos que le estamos dando que son los datos estandarizado X_std. Además, cada uno de estas matrices es una matriz de Numpy. Como se ilustra en la Figura1.
+Dask array es una implementación paralela de Numpy que nos permite dividir en muchas matrices más pequeñas en los datos que le estamos dando que son los datos estandarizado X_std y lo almacena en un disco y carga solo fragmentos necesarios en memoria en cada momento. Además, cada uno de estas matrices es una matriz de Numpy. Como se ilustra en la Figura1.
 
 ![](imagenes/figura1.png)
 
 Figura1:*Dask array implementación paralela de Numpy*
 
-Estos fragmentos de matrices que se obtine a través de Dask array permite escalar cuando el conjunto de datos crece. En lo que para Numpy es difícil cargar estos datos porque solo trabaja en un solo núcleo, mientras con Dask array permite utilizar todos los núcleos locales que se tiene en una maquina local.
+Estos fragmentos de matrices que se obtine a través de Dask array permite escalar cuando el conjunto de datos crece. En lo que para Numpy es difícil cargar estos datos porque solo trabaja en un solo núcleo, mientras con Dask array permite utilizar todos los núcleos locales que se tiene en una maquina local permitiendo acelerar significativamente el tiempo de procesamiento.
 
 Además, se utilizo la librería de **dask_ml.cluster** importando la biblioteca KMeans. Dask-ML permite que un algoritmo de aprendizaje automático se escalable. Ya que, al encontrase con desafíos al momento de escalar un modelo y que este se vuelve grande o complejo va afectar el flujo de trabajo presentado demoras al instante que se desea hacer el entrenamiento, predicción o evaluación.
 
@@ -109,11 +109,17 @@ kmeans = KMeans(n_clusters=5,init='k-means||',max_iter=300,n_init=10,random_stat
 En *dask_ml.cluster.KMeans* se inicializa predeterminadamente con el parametro de *k-means||* em comparación de scikit-learn que es *k-means++*. El parametro *k-means||* es una variante de *k-means++* que esta diseñada para funcionar de forma paralela que funciona bien para un entorno distribuido, en cambio *k-means++* es secuencial. Pero en la aplicación de este parametro *k-means||* tiene una implicación cuando el conjunto de dato cabe en la memoria en una sola máquina este puede ser más lenta que la de scikit-learn *k-means++*.
 
 Como se ve a continuación:
-
+**Paralelización con Dask-ML con la librería dask_ml.cluster.KMeans y parametro *k-means||***
 ![](imagenes/skele.png)
+
+**Scikit-Learn sin paralelización con la librería sklearn.cluster.KMeans y parametro *k-means++***
+
 ![](imagenes/daskml.png)
 
-*k-means||* y *k-means++* son inicializadores que permiten seleccionar los centros del cluster hasta llegar a converger es decir repetir la asignación de puntos a los clusteres según al centro más cercano a través de la de la distancia euclidiana y a la actualización de los centros de los clusteres hasta que los centros ya no cambien significativamente entre las interacciones.
+Los resultados anteriores se observa que la implementación sin paralelización es más rápida que la paralelización con Dask-ML esto se debe a que los datos caben en la memoria. Por lo cual, el resultado de la paralelización es más lenta en la Paralelización con Dask-ML.
+
+- *k-means||* y *k-means++* son inicializadores que permiten seleccionar los centros del cluster hasta llegar a converger es decir repetir la asignación de puntos a los clusteres según al centro más cercano a través de la de la distancia euclidiana y a la actualización de los centros de los clusteres hasta que los centros ya no cambien significativamente entre las interacciones.
+
 
 - **Algoritmo:** Algoritmo de ensamblado  (XGBoost).
 - Diagrama de pasos:
