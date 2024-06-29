@@ -84,6 +84,12 @@ PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento
 
 ![](imagenes/Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.001.png)
 
+Se aplicó paralelización para el manejo de los datos a través de 
+X_std_dask = da.from_array(X_std,chunks=(1000,2)) que permite convertir a Dask array.
+Dask array es una implementación paralela de Numpy que nos permite dividir en muchas matrices más pequeñas en los datos que le estamos dando que son los datos estandarizado X_std. Además, cada uno de estas matrices es una matriz de Numpy. Como se ilustra en la Figura1.
+
+
+
 - **Algoritmo:** Algoritmo de ensamblado  (XGBoost).
 - Diagrama de pasos:
 
