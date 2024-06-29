@@ -109,6 +109,7 @@ kmeans = KMeans(n_clusters=5,init='k-means||',max_iter=300,n_init=10,random_stat
 En *dask_ml.cluster.KMeans* se inicializa predeterminadamente con el parametro de *k-means||* em comparación de scikit-learn que es *k-means++*. El parametro *k-means||* es una variante de *k-means++* que esta diseñada para funcionar de forma paralela que funciona bien para un entorno distribuido, en cambio *k-means++* es secuencial. Pero en la aplicación de este parametro *k-means||* tiene una implicación cuando el conjunto de dato cabe en la memoria en una sola máquina este puede ser más lenta que la de scikit-learn *k-means++*.
 
 Como se ve a continuación:
+
 **Paralelización con Dask-ML con la librería dask_ml.cluster.KMeans y parametro *k-means||***
 ![](imagenes/skele.png)
 
