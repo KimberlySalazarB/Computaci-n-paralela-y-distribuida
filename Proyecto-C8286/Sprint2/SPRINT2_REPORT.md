@@ -28,7 +28,7 @@ Dask es una biblioteca de Python que facilita la programación paralela y distri
 **Uso de Dask en Programación Paralela:** Dask permite la ejecución en paralelo dividiendo las tareas en bloques y ejecutándolas simultáneamente en múltiples núcleos del mismo equipo. 
 
 **Uso de Dask en Programación Distribuida:**
-Dask también permite la programación distribuida ejecutando tareas en un clúster de múltiples máquinas o procesos. 
+Dask también permite la programación distribuida ejecutando tareas en un clúster de múltiples máquinas o núcleos de CPU. 
 
 ### **PySpark**
 PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento de datos a gran escala en tiempo real en un entorno distribuido utilizando Python. Su objetivo es hacer que el aprendizaje automático práctico sea escalable y sencillo. 
@@ -87,7 +87,7 @@ PySpark es la API de Python para Apache Spark. Le permite realizar procesamiento
 
 ##### **Aplicación de paralelización con dask**
 
-Se aplicó paralelización para el manejo de los datos a través de 
+Se aplicó paralelización para procesar los datos a través de 
 **X_std_dask = da.from_array(X_std,chunks=(1000,2))** que permite convertir a Dask array.
 Dask array es una implementación paralela de Numpy que nos permite dividir en muchas matrices más pequeñas en los datos que le estamos dando que son los datos estandarizado X_std y lo almacena en un disco y carga solo fragmentos necesarios en memoria en cada momento. Además, cada uno de estas matrices es una matriz de Numpy. Como se ilustra en la Figura1.
 
@@ -126,6 +126,24 @@ Los resultados anteriores se observa que la implementación sin paralelización 
 - Diagrama de pasos:
 
 ![](imagenes/Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.002.png)
+
+En este algoritmo se aplicó una programación distribuida para distribuir tareas a través de múltiples núcleos de CPU. Para lograr esto se hizo uso de un cliente Dask (**Client()**) la cual gestiona la ejecución distribuida, también, se configurar un clúster de Dask para ejecutar tareas paralelas. En el codigo se puede observar las siguientes líneas:
+```
+from dask.distributed import Client
+client = Client(n_workers=4, threads_per_worker=2)
+```
+Esta línea nos indica que trabajarenos con 4 trabajadores y cada trabajador tendra 2 hilos esto quiere decir que cada trabajador puede manejar hasta 2 tareas simultáneamente(paralelo) dentro de su propio proceso. Asimismo, cada trabajador va ser un proceso independiente que puede ejecutar tareas de Dask. 
+
+Después, de ello se hizo uso de *dask.dataframe* que permite procesar conjuntos de datos tabulares paralelizando pandas. Dask dataframes cordina una colección de muchos dataframes de pandas que pueden estar en el disco o en otras máquinas, como se observa en la siguiente imagen:
+
+![](imagenes/)
+
+Por otra parte, se utilizó *dask_ml.model_selection* para dividir tanto los datos de entrenamiento y prueba. Para entrenar el modelo de XGBoost, utilice *dask-xgboost* que permite realizar el entrenamiento en utilizando los 4 trabajadores en paralelo sobre el conjunto de datos distribuidos en un clúster. La siguiente línea de codigo:
+```
+bst = dask_xgboost.train(client, params, X_train, y_train, num_boost_round=10)
+```
+*dask_xgboost.train* sirve para entrenar un modelo XGBoost distribuido. Aquí, *client*  previamente inicializado gestiona la distribución de tareas entre los trabajadores disponibles.
+
 
 - **Algoritmo:** Algoritmo de visión computacional (CNN).
 - Diagrama de pasos:
