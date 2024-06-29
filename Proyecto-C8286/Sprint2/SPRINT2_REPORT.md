@@ -146,6 +146,15 @@ bst = dask_xgboost.train(client, params, X_train, y_train, num_boost_round=10)
 ```
 *dask_xgboost.train* sirve para entrenar un modelo XGBoost distribuido. Aquí, *client*  previamente inicializado gestiona la distribución de tareas entre los trabajadores disponibles.
 
+En comparación al resultado del sprint 1 de la ejecución con scikit-learn y los resultados de sprint2. Se obtuvo un mejor resultado en el sprint esto se debe que los datos caben en la memoria y por lo cual, hacer que la ejecución en una solo núcleo se ejecute más rápido que en 4 núcleos(procesos). 
+
+**Con scikit-learn**
+
+![](imagenes/)
+
+**Con Dask -> Distribuido**
+
+![](imagenes/)
 
 - **Algoritmo:** Algoritmo de visión computacional (CNN).
 - Diagrama de pasos:
