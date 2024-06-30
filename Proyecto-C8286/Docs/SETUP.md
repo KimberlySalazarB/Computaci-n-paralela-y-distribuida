@@ -80,8 +80,33 @@ Este documento proporciona instrucciones detalladas para configurar el entorno n
     ```
     pip install --upgrade pip
     ```
+### Para ver el dashboard de Dask desde colab 
+ ```
+Obten tu AUTHTOKEN desde la pagina ngrok
+# Configurar ngrok con el authtoken: para poder observar el dashboard
+from pyngrok import ngrok
+ngrok.set_auth_token("AUTHTOKEN")
 
+Inicializas el cliente de dask
 
+Luego:
+
+# Obtener la URL del Dashboard
+dashboard_link = client.dashboard_link
+print("Dashboard link:", dashboard_link)
+
+from pyngrok import ngrok
+
+# Lista de tuneles
+#ngrok.get_tunnels()
+
+# Cerra si hay algun tunnel abierto para crear uno nuevo
+#ngrok.disconnect(ngrok_tunnel.public_url) # Replace with the actual public URL if needed
+
+# Conectar ngrok al puerto del dashboard
+ngrok_tunnel = ngrok.connect(addr="127.0.0.1:8787")
+print("ngrok tunnel:", ngrok_tunnel.public_url)
+```
 ### Recursos Adicionales
 
 - [Documentación de Dask](https://dask.pydata.org/en/latest/install.html)
