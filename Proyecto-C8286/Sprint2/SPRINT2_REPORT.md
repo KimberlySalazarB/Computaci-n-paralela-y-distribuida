@@ -198,13 +198,13 @@ Asimismo, la líneas que estandarizan las caracteristicas también se ejecuta en
 Por otra parte, en el momento de entrenar el algoritmo de KMeans también se ejecuta en paralelo 
 en el clúster de Spark. Los datos se dividen en particiones y cada nodo procesa una parte de los datos en paralelo. Cada nodo contribuye al cálculo de los centros de los clusters, y los resultados se combinan para obtener los centroides finales.
 
-Los resultados muestran que el algoritmo no ejecutado con scikit-learn  se ejecuta más rápido que PySpark esto se debe a que PySpark esta diseñado para grandes conjutos de datos que no caben en la memoria y como los datos si caben denera un overhead considerable, es decir que genera un tiempo adicional requerido para coordinar y transferir datos entre procesadores en un sistema paralelo. 
+Los resultados muestran que el algoritmo ejecutado con scikit-learn se ejecuta más rápido que PySpark esto se debe a que PySpark esta diseñado para grandes conjutos de datos que no caben en la memoria y como los datos si caben genera un overhead considerable, es decir que genera un tiempo adicional requerido para coordinar y transferir datos entre procesadores en un sistema paralelo. 
 
 **Con scikit-learn**
 
 ![](imagenes/skiler1.png)
 
-**Con Dask -> Distribuido**
+**Con PySpark -> Distribuido**
 
 ![](imagenes/daskdis1.png)
 
@@ -212,6 +212,21 @@ Los resultados muestran que el algoritmo no ejecutado con scikit-learn  se ejecu
 - Diagrama de pasos:
 
   ![](imagenes/Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.005.png)
+
+En este algoritmo se aplicó la programación paralela y distribuida. Para realizar esto se inicializó una sesión de Spark con 4 núcleos de CPU en la máquina local. Lo cual nos va a permitir ejecuar tareas en paralelo utilizando estos 4 núcleos de la máquina local.
+Luego Spark distribuye la carga y lee el archivo de CSV entre múltiples núcleos permitiendo una lectura eficiente y paralela de los datos. También se hace uso de *VectorAssembler* que transforma múltiples columnas de características en un solo vector. Después, se realiza la división de datos con *randomSplit*  diatribuyendo aleatoriamente los datos entre conjuntos de entrenamiento y prueba operando en paralelo.
+En el entrenamiento del Modelo XGBoost, se distribuye el trabajo del modelo XGBoost entre 2 trabajadores.
+
+Los resultados muestran que el algoritmo ejecutado con scikit-learn se ejecuta más rápido que PySpark esto se debe a que PySpark esta diseñado para grandes conjutos de datos. El conjunto de dato cabe en la memoria y no es grande por lo cual genera un overhead considerable, es decir que genera un tiempo adicional requerido para coordinar y transferir datos entre procesadores en un sistema paralelo. 
+
+**Con scikit-learn**
+
+![](imagenes/skiler2.png)
+
+**Con PySpark -> Distribuido**
+
+![](imagenes/spark2.png)
+
 
 #### **Desafíos encontrados**
 
