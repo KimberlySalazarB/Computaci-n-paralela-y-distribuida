@@ -370,7 +370,7 @@ Al paralelizar la tarea de entrenamiento con Pyspark, se obtuvo un tiempo de eje
 
 #### **Lecciones aprendidas**
 
-- **Qué funcionó bien:** La integración de Dask y PySpark en el entorno distribuido.
+- **Qué funcionó bien:** La integración de Dask y PySpark en el entorno distribuido, pero no presenta muy buenos resultados por el tamaño de la data.
 - **Qué se podría mejorar:** Optimización de la memoria en entornos distribuidos. Optimizar los algoritmos de machine learning para mejorar su rendimiento y eficiencia.
 ## 6. **Plan para el próximo Sprint**
 
