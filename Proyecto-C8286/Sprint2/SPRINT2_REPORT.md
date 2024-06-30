@@ -184,6 +184,30 @@ Los resultados muestran que la ejecución de la división de los datos es ligera
 
   ![](imagenes/Aspose.Words.a08525b1-ff5f-41c9-8ff3-c5b4bb27efad.004.png)
 
+  En este algoritmo de K-means con PySpark se crea una sesión de Spark que permite la ejecución de operaciones de Spark que están diseñadas para aprobechar la programación paralela y distribuida. También se hace uso de *spark.read.csv* para leer un archivo en un DataFrame de Spark. Este DataFrame se distribuirá automaticamente en el clúster dividiendo el archivo CSV en fragmentos que se procesarán en paralelo ustilizando múltiples núcleos en cada nodo del clúster.
+
+En la siguientes líneas se ejecutan en paralelo donde se hace uso de VectorAssembler para convertir las columnas de características en un solo vector. Luego, se aplica esta transformación al DataFrame creando una columna con los vectores de características. 
+
+```
+vec_assembler = VectorAssembler(inputCols=['Fat (g)', 'Total Carb (g)'],
+                                outputCol='Caracteristicas')
+data_final = vec_assembler.transform(dataset)
+```
+Asimismo, la líneas que estandarizan las caracteristicas también se ejecuta en paralelo donde cada nodo procesa una partición de los datos de manera independiente. 
+
+Por otra parte, en el momento de entrenar el algoritmo de KMeans también se ejecuta en paralelo 
+en el clúster de Spark. Los datos se dividen en particiones y cada nodo procesa una parte de los datos en paralelo. Cada nodo contribuye al cálculo de los centros de los clusters, y los resultados se combinan para obtener los centroides finales.
+
+Los resultados muestran que el algoritmo no ejecutado con scikit-learn  se ejecuta más rápido que PySpark esto se debe a que PySpark esta diseñado para grandes conjutos de datos que no caben en la memoria y como los datos si caben denera un overhead considerable, es decir que genera un tiempo adicional requerido para coordinar y transferir datos entre procesadores en un sistema paralelo. 
+
+**Con scikit-learn**
+
+![](imagenes/skiler1.png)
+
+**Con Dask -> Distribuido**
+
+![](imagenes/daskdis1.png)
+
 - **Algoritmo:** Algoritmo de ensamblado  (XGBoost).
 - Diagrama de pasos:
 
@@ -198,6 +222,8 @@ Los resultados muestran que la ejecución de la división de los datos es ligera
 
 - Limitaciones en la API de Dask para algoritmos de machine learning más allá de K-means, lo que restringe algunos algoritmos.
 - **PySpark:** Limitaciones en la API de PySpark para  algunos algoritmos de machine learning, lo que restringe la implementación de dichos algoritmos.
+- La cantidad de datos que se utilizó no es lo suficientemente grande para aplicar Dask y PySpark, por lo cual no se obtuvieron buenos resultados.
+  
 ## 4. **Resultados**
 
 ### **Funcionalidades desarrolladas**
