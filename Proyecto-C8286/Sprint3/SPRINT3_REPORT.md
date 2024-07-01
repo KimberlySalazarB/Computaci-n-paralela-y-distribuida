@@ -9,10 +9,12 @@ Después de haber utilizara la técnicas para paralelizar y distribuir en los al
 - Optimizar los algoritmos de machine learning para mejorar su rendimiento y eficiencia.
 - Preparar y presentar los resultados del proyecto.
   
-**Optimización de modelo**
+**Optimización de modelo:**
+
 *Para la optimización  se hara uso de Grid search y random search: Implementar técnicas de búsqueda de hiperparámetros para optimizar los modelos de machine learning.*
 
-**Evaluación de modelo**
+**Evaluación de modelo:**
+
 *Para la evaluación de algoritmos se hara uso de la librería **time** y **psutil** para obtener el tiempo de procesamiento y supervisar el uso de recursos*
 
 
