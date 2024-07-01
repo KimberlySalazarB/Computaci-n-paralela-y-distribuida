@@ -177,7 +177,7 @@ scoring=scoring,  # Métrica de evaluación
 ```
 **n_jobs=-1:** Señala que el cálculo de los hiperparámetros para el modelo KMeans con GridSearchCV y RandomizedSearchCV, se realice en paralelo utilizando todos los procesadores disponibles, lo cual puede acelerar significativamente el proceso.
 
-Obteniendo estos resultados en un tiempo de:
+Obteniendo estos resultados en un tiempo de respectivamente:
 ```
 total: 3.59  s
 total: 2.46 s
