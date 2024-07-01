@@ -21,6 +21,9 @@ Después de haber esquematizado los algoritmos de machine learning que se realiz
 
 [Más información](https://ml.dask.org/) 
 
+
+[Ver Ejemplo Sklearn vs Dask](https://github.com/KimberlySalazarB/Computaci-n-paralela-y-distribuida/blob/main/Proyecto-C8286/Sprint2/notebooks/Sklearn_vs_Dask.ipynb)
+
 ### **Dask**
 Dask es una biblioteca de Python que facilita la programación paralela y distribuida. Te permite paralelizar el código de manera eficiente, y es especialmente útil para el procesamiento de grandes conjuntos de datos y cálculos complejos. Además, su integración con NumPy, pandas y Scikit-learn lo hacen especialmente útil para la ciencia de datos y el análisis de datos a gran escala.
 
