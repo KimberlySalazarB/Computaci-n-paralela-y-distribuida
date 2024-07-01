@@ -280,7 +280,7 @@ Después, de identificar los valores más altos se utiliza la herramienta *train
 ### **Comparación con los objetivos del Sprint**
 
 - **Objetivos alcanzados:** Optimizar los algoritmos de machine learning, y se documentaron los resultados.
-- **Objetivos no alcanzados:** Optimizar un algoritmos de machine learning directamente en un entorno distribuido.
+- **Objetivos no alcanzados:** Optimizar de machine learning directamente en un entorno distribuido del modelo XGBoost.
 
 #### **Lecciones aprendidas**
 
